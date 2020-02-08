@@ -4,4 +4,5 @@
 __pycahce__/
 .theia
 env.py
-.gitpod
+.gitpod.dockerfile
+.gitpod.yml
