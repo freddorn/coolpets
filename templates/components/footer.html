@@ -1,0 +1,50 @@
+% load staticfiles %}
+
+<footer id="footer" class="container-fluid small-box-shadow">
+	<div class="row">
+		<div class="col-12 col-sm-6 col-lg-8">
+			<div class="row">
+				<div class="col-12">
+					<h5 class="text-uppercase">Categories</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 col-lg-4">
+					<ul>
+
+						<li><a href="{% url 'leashes' %}">Leashes</a></li>
+						<li><a href="{% url 'collars' %}">Collars</a></li>
+						<li><a href="{% url 'harnesses' %}">Harnesses</a></li>
+						<li><a href="{% url 'toys' %}">Toys</a></li>
+
+					</ul>
+				</div>
+				<div class="col-12 col-lg-8">
+					<ul>
+						<li><a href="{% url 'beds' %}">Beds</a></li>
+						<li><a href="{% url 'carriers' %}">Carriers</a></li>
+						<li><a href="{% url 'feeding' %}">Feeding</a></li>
+						<li class="mb-3"><a href="{% url 'all-products' %}">View All</a></li>
+						<!-- mb-3 adds a little space between bottom of last <li> and column underneath -->
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-sm-6 col-lg-4">
+			<h5 class="text-uppercase">Popular Links</h5>
+			<ul>
+				<li><a href="{% url 'about' %}">About</a></li>
+				<li><a href="{% url 'search' %}">Search</a></li>
+				<li><a href="{% url 'faqs' %}">FAQs</a></li>
+				<li><a href="{% url 'contact' %}">Contact</a></li>
+			</ul>
+
+		</div>
+		<div class="col-12 text-center">
+
+			<!-- Year added by javascript -->
+			<small>© Cool Pets <span id="copyright-year"></span></small>
+		</div>
+	</div>
+
+</footer>
