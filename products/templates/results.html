@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% load search_extras %}
+<!-- This page can be used for displaying categories and search results -->
+
+
+
+{% block content %}
+
+<div class="container push-footer-down">
+	<div class="row">
+
+		<!-- breadcrumbs -->
+		<div id="breadcrumbs" class="col-12">
+			<a href="{% url 'home' %}">Home </a>
+			<i class="fas fa-cheese fa-flip-horizontal"></i>
+			{% if category %}
+			<a href="{% url 'categories' %}">Categories </a>
+			<i class="fas fa-cheese fa-flip-horizontal"></i>
+			{% if category != "All Products" %}
+			<a href="categories/{{ category|slugify }}">{{ category }}</a>
+			{% else %}
+			<a href="{% url 'all-products' %}">{{ category }}</a>
+			{% endif %}
+			{% else %}
+			<a href="{% url 'search' %}">Search</a>
+			{% endif %}
+		</div>
+
+		<!-- Buttons for each category in the shop, hidden on mobile view -->
+		<div class="col-12 text-center d-none d-md-block">
+			<a href="{% url 'all-products' %}" class="btn btn-primary-outline">View all</a>
+			<a href="{% url 'leashes' %}" class="btn btn-primary-outline">Leashes</a>
+			<a href="{% url 'collars' %}" class="btn btn-primary-outline">Collars</a>
+			<a href="{% url 'beds' %}" class="btn btn-primary-outline">Beds</a>
+			<a href="{% url 'carriers' %}" class="btn btn-primary-outline">Carriers</a>
+			<a href="{% url 'feeding' %}" class="btn btn-primary-outline">Feeding</a>
+			<a href="{% url 'harnesses' %}" class="btn btn-primary-outline">Harnesses</a>
+			<a href="{% url 'toys' %}" class="btn btn-primary-outline">Toys</a>
+		</div>
+
+		<!-- Heading -->
+		<div class="col-12">
+			{% if category %}
+			<h1>{{ category }}</h1>
+			{% endif %}
+		</div>
+
+		{% if category == 'Search' %}
+
+		<!-- Search bar field -->
+		<div class="col-12">
+			<form method="GET" id="search-form" action=".">
+				<div class="form-row justify-content-center">
+					<div class="col-12 col-md-8 col-lg-10 mb-3">
+						<input type="search" class="form-control w-100" id="searchbox" name="query"
+                            value="{{ request.GET.query }}" placeholder="Search..." />
+                    </div>
+						<div class="col-5 col-md-4 col-lg-2 mb-2">
+							<button type="submit" class="btn btn-blue btn-cta w-100 m-0">Search</button>
+						</div>
+					</div>
+
+			</form>
+		</div>
+		{% endif %}
+
+		<!-- results -->
+		<div id="results-listings" class="col-12">
+			<div class="container p-3">
+				<div class="row">
+					{% if category != 'Search' %}
+					<div class="col-12">
+						<form method="POST">
+							{% csrf_token %}
+							<div class="form-group d-flex justify-content-center justify-content-md-end">
+								<select name="results-sort-select" id="results-sort-select" class="form-control">
+                                    <option {% if select == 'featured' %}selected{% endif %} value="featured">Featured
+                                    </option>
+                                    <option {% if select == 'price-high' %}selected{% endif %} value="price-high">Price,
+                                        high to low</option>
+                                    <option {% if select == 'price-low' %}selected{% endif %} value="price-low">Price,
+                                        low to high</option>
+                                </select>
+								<button type="submit" class="btn btn-blue ml-2">Sort</button>
+							</div>
+						</form>
+					</div>
+					{% endif %}
+
+					{% if not products and not no_search_yet %}
+					<div class="col-12 text-center">
+						<h5>There are currently no listings that match this
+							{% if category != 'Search' %}category{% else %} search{% endif %}</h5>
+					</div>
+					{% endif %}
+
+					{% for product in products %}
+					<div class="col-12 col-sm-6 col-md-4 col-lg-3 listing-card-padding">
+						<a href="{{ product.get_absolute_url }}">
+							<div class="listing-card mx-auto">
+								<div class="listing-img-wrapper">
+									<div class="listing-img small-box-shadow sm-box-shadow-hover d-flex justify-content-end"
+										style="background-image: url('{{ product.product_image1.url}}');">
+									</div>
+								</div>
+								<div class="listing-info d-flex justify-content-between">
+									<h5>{{ product.title }}</h5>
+									<p>${{ product.price }}</p>
+								</div>
+							</div>
+						</a>
+					</div>
+					{% endfor %}
+				</div>
+				<div class="row">
+					<div class="col-12 text-center mt-3">
+						<!-- 
+                            Pagination code provided by Corey Schafer youtube video https://www.youtube.com/watch?v=acOktTcTVEQ&t 
+                            This code for when class based pagination is used
+                        -->
+						{% if is_paginated %}
+						{% if page_obj.has_previous %}
+						<a class="btn btn-blue mb-4" href="?page=1">First</a>
+						<a class="btn btn-blue mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+						{% endif %}
+
+						{% for num in page_obj.paginator.page_range %}
+						{% if page_obj.number == num %}
+						<a class="btn btn-primary mb-4" href="?page={{ num }}">{{ num }}</a>
+						{% elif num > page.obj.number|add:'-3' and num < page.obj.number|add:'3' %}
+						<a class="btn btn-blue mb-4" href="?page={{ num }}">{{ num }}</a>
+						{% endif %}
+						{% endfor %}
+
+						{% if page_obj.has_next %}
+						<a class="btn btn-blue mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+						<a class="btn btn-blue mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+						{% endif %}
+
+						{% endif %}
+					</div>
+					<div class="col-12 text-center mt-3">
+
+						<!-- This code for when function based pagination is used -->
+						{% if products %}
+						{% if products.has_previous %}
+						<a class="btn btn-blue mb-4"
+							href="{{ request.build_absolute_uri|build_search_url }}&page=1">First</a>
+						<a class="btn btn-blue mb-4"
+							href="{{ request.build_absolute_uri|build_search_url }}&page={{ products.previous_page_number }}">Previous</a>
+						{% endif %}
+
+						{% for num in products.paginator.page_range %}
+						{% if products.number == num %}
+						<a class="btn btn-primary mb-4"
+							href="{{ request.build_absolute_uri|build_search_url }}&page={{ num }}">{{ num }}</a>
+						{% elif num > page.obj.number|add:'-3' and num < page.obj.number|add:'3' %}
+						<a class="btn btn-blue mb-4"
+							href="{{ request.build_absolute_uri|build_search_url }}&page={{ num }}">{{ num }}</a>
+						{% endif %}
+						{% endfor %}
+
+						{% if products.has_next %}
+						<a class="btn btn-blue mb-4"
+							href="{{ request.build_absolute_uri|build_search_url }}&page={{ products.next_page_number }}">Next</a>
+						<a class="btn btn-blue mb-4"
+							href="{{ request.build_absolute_uri|build_search_url }}&page={{ products.paginator.num_pages }}">Last</a>
+						{% endif %}
+						{% endif %}
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
