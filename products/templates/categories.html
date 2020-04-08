@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+
+<!-- This page can be used for displaying categories and search results -->
+
+
+{% block content %}
+
+<div class="container">
+	<div class="row mb-5">
+
+		<!-- breadcrumbs -->
+		<div id="breadcrumbs" class="col-12">
+			<a href="/">Home </a>
+			<i class="fas fa-cheese fa-flip-horizontal"></i>
+			<a href="{% url 'categories' %}">Categories </a>
+		</div>
+
+		<!-- Heading -->
+		<div class="col-12">
+			<h1>Browse Categories</h1>
+		</div>
+
+		<!-- Displays image for each category in shop -->
+
+		<div class="col-12 col-sm-6 col-lg-3 home-category-wrapper">
+			<a href="{% url 'leashes' %}">
+				<div id="category-img-1"
+					class="category-img d-flex align-items-end small-box-shadow sm-box-shadow-hover"
+					title="Browse leashes">
+					<div class="category-heading-box text-center">
+						<h3>Leashes</h3>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-12 col-sm-6 col-lg-3 home-category-wrapper">
+			<a href="{% url 'collars' %}">
+				<div id="category-img-2"
+					class="category-img d-flex align-items-end small-box-shadow sm-box-shadow-hover"
+					title="Browse collars">
+					<div class="category-heading-box text-center">
+						<h3>Collars</h3>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-12 col-sm-6 col-lg-3 home-category-wrapper">
+			<a href="{% url 'beds' %}">
+				<div id="category-img-3"
+					class="category-img d-flex align-items-end small-box-shadow sm-box-shadow-hover"
+					title="Browse beds">
+					<div class="category-heading-box text-center">
+						<h3>Beds</h3>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-12 col-sm-6 col-lg-3 home-category-wrapper">
+			<a href="{% url 'carriers' %}">
+				<div id="category-img-4"
+					class="category-img d-flex align-items-end small-box-shadow sm-box-shadow-hover"
+					title="Browse carriers">
+					<div class="category-heading-box text-center">
+						<h3>Carriers</h3>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-12 col-sm-6 col-lg-3 home-category-wrapper">
+			<a href="{% url 'feeding' %}">
+				<div id="category-img-5"
+					class="category-img d-flex align-items-end small-box-shadow sm-box-shadow-hover"
+					title="Browse feeding">
+					<div class="category-heading-box text-center">
+						<h3>Feeding</h3>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-12 col-sm-6 col-lg-3 home-category-wrapper">
+			<a href="{% url 'harnesses' %}">
+				<div id="category-img-6"
+					class="category-img d-flex align-items-end small-box-shadow sm-box-shadow-hover"
+					title="Browse harnesses">
+					<div class="category-heading-box text-center">
+						<h3>Harnesses</h3>
+					</div>
+				</div>
+			</a>
+		</div>
+
+		<div class="col-12 col-sm-6 col-lg-3 home-category-wrapper">
+			<a href="{% url 'toys' %}">
+				<div id="category-img-7"
+					class="category-img d-flex align-items-end small-box-shadow sm-box-shadow-hover"
+					title="Browse toys">
+					<div class="category-heading-box text-center">
+						<h3>Toys</h3>
+					</div>
+				</div>
+			</a>
+		</div>
+
+
+	</div>
+</div>
+
+{% endblock %}
