@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+
+{% include 'components/progress.html' %}
+
+<div class="container pb-2 push-footer-down">
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-9 mt-4">
+
+			<!-- order confirmation message details shipping information given and gives user link to view their order in their profile page -->
+			<h3>Order Confirmed</h3>
+			<p>Thank you for your order! <br>
+                Your package will be shipped within 2 working days to the address supplied:</p>
+
+				<div class="address-card">
+					<p>{{ order.full_name }},<br>
+                    {{ order.address_line_1 }},<br>
+                    {% if order.address_line_2 %}
+                    {{ order.address_line_2 }},<br>
+                    {% endif %}
+                    {{ order.town_or_city }},<br>
+                    {% if order.state %}
+                    {{ order.state }},<br>
+                    {% endif %}
+                    {{ order.postcode }},<br>
+                    {{ order.country }}</p>
+				</div>
+
+
+				<p>You can review your order on your <a href="{% url 'profile'%}">Account page</a></p>
+
+				<p>If you have any questions about your order, feel free to <a href="{% url 'contact'%}">contact</a> us.
+				</p>
+
+				<p>Thank you for your order!</p>
+
+
+				<a href="{% url 'all-products' %}" class="btn btn-cta btn-primary ml-0">Return to Shopping</a>
+
+		</div>
+	</div>
+</div>
+
+{% endblock %}
