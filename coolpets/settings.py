@@ -24,10 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if 'DEV' in os.environ:
-    DEBUG = True
-else:
-    DEBUG = False
+
+DEBUG = True
+
 
 ALLOWED_HOSTS = [os.environ.get('HOSTNAME'), '127.0.0.1']
 
@@ -43,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+
+    # 3rd party
+    'crispy_forms',
+
 
     # Custom Apps
     'products',
