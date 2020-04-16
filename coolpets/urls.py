@@ -19,6 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from pages.views import home_view
 
+
 urlpatterns = [
 
     path('', home_view, name="home"),
@@ -27,7 +28,6 @@ urlpatterns = [
     path('products/', include('products.urls')),
     path('cart/', include('cart.urls')),
     path('search/', include('search.urls')),
-
     path('admin/', admin.site.urls),
 ]
 
