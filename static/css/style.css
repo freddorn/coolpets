@@ -47,6 +47,100 @@ footer h5 {
   margin-bottom: 0.75rem;
 }
 
+/* Shopping cart fonts */
+#shopping-cart-contents h4 {
+  font-size: 1rem;
+}
+
+#subtotal {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+#order-summary-mobile h4,
+.total {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: #373737;
+  margin: 0 1rem;
+  display: inline;
+  text-transform: none;
+}
+
+.checkout-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+#total {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Listing fonts */
+.listing-info h5 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.listing-card h5 {
+  color: #373737;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.listing-card h5:hover {
+  color: #b34708;
+}
+
+/* Headings for displaying orders */
+h6.sml-cap-heading {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.sml-data {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+}
+
+/* Styling for all call to action buttons */
+
+.btn-cta {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  padding: 0.4rem 1rem;
+  margin: 1rem;
+}
+
+.btn-primary {
+  background-color: #e68186;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #cc5d62;
+  color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.btn-blue {
+  background-color: #63c4fc;
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #47b7f8;
+  color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
 /*--Contact page image--*/
 #beach-dogs {
  display: block;
