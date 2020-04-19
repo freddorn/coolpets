@@ -227,6 +227,118 @@ it partially over the shopping cart icon */
   margin-right: auto;
 }
 
+/* Delete icon in cart page */
+.fa-times-circle {
+  -webkit-transition: 0.2s all ease-in-out 0.1s;
+  transition: 0.2s all ease-in-out 0.1s;
+}
+
+.fa-times-circle:hover {
+  color: red;
+}
+
+.orders-icon {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  -webkit-transition: 0.2s all ease-in-out 0.1s;
+  transition: 0.2s all ease-in-out 0.1s;
+}
+
+.orders-icon:hover {
+  color: #cc5d62;
+}
+
+/* icons on home page */
+.icon-box-wrapper,
+.icon-box {
+  display: inline-block;
+}
+
+.icon-box {
+  width: 200px;
+  margin: 1rem;
+}
+
+.icon-box-wrapper i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.icon-box p {
+  font-size: 1rem;
+  color: #e68186;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+a {
+  color: #63c4fc;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #47b7f8;
+}
+
+#searchbox {
+  width: auto;
+}
+
+/*  overrides bootstrap navbar padding to 
+    make it more streamlined */
+.navbar {
+  padding: 0 1rem;
+}
+
+.small-box-shadow {
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.sm-box-shadow-hover:hover {
+  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);
+}
+
+/* Styling for footer */
+#footer {
+  background-color: #373737;
+  padding: 1.5rem;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-heading {
+  margin-bottom: 2rem;
+}
+
+footer a {
+  color: #f8f9fa;
+  -webkit-transition: 0.3s all ease-in-out 0.2s;
+  transition: 0.3s all ease-in-out 0.2s;
+}
+
+footer a:hover {
+  color: #e68186;
+  text-decoration: none;
+}
+
+.order-card {
+  background-color: #E5E5E5;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px;
+}
+
 /*--Background image for account pages--*/
 .dogs-background {
   background-image: url("https://i.ibb.co/ww53d39/dogs.jpg");
