@@ -141,6 +141,41 @@ h6.sml-cap-heading {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
 }
 
+/* Category buttons on results page */
+
+.btn-primary-outline {
+  border: 1px solid #e68186;
+  color: #e68186;
+  margin: 0.25rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-primary-outline:hover {
+  background-color: #e68186;
+  color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.btn-shop {
+  width: 100%;
+  margin: 0;
+}
+
+#pay-now-btn {
+  min-width: 300px;
+}
+
+.accordion-btn {
+  width: 100%;
+}
+
+#order-summary-mobile button {
+  text-decoration: none;
+  width: 100%;
+}
+
 /*--Contact page image--*/
 #beach-dogs {
  display: block;
