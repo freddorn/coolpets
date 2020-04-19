@@ -390,3 +390,18 @@ footer a:hover {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+/* Overrides bootstrap margin-bottom on alert messages */
+.alert {
+  margin: 0;
+}
+
+#results-sort-select {
+  max-width: 200px;
+}
+
+/* pushes footer down to bottom of the page on larger screens. 
+Footer height on larger screens is 516px, navbar is 55px */
+.push-footer-down {
+  min-height: calc(100vh - (516px + 55px));
+}
