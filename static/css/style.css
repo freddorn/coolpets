@@ -228,6 +228,11 @@ it partially over the shopping cart icon */
   width: 100%;
 }
 
+/*--About page image--*/
+.about-pets {
+    height: 200%;
+}
+
 /*--Dogs image for account pages--*/
 .dogs-accounts {
   background-image: url("https://i.ibb.co/ww53d39/dogs.jpg");
