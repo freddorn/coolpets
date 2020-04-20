@@ -67,7 +67,7 @@
                                         <div class="col-3">
                                             <h6 class="sml-cap-heading">Total</h6>
                                             <span
-                                                class="sml-data">€{{ full_order.total|add:full_order.order.country.shipping_price }}</span>
+                                                class="sml-data">${{ full_order.total|add:full_order.order.country.shipping_price }}</span>
                                         </div>
                                         <div class="col-9 col-md-3">
                                             <h6 class="sml-cap-heading">Dispatch to</h6>
@@ -104,7 +104,7 @@
 											<span class="sml-data">{{ order_item.quantity }}</span>
 										</div>
 										<div class="col-3 text-right">
-											<span class="sml-data">€{{ order_item.product.price }}</span>
+											<span class="sml-data">${{ order_item.product.price }}</span>
 										</div>
 										{% endfor %}
 
@@ -112,7 +112,7 @@
 											<span class="sml-data">DHL tracked Shipping</span>
 										</div>
 										<div class="col-3 text-right">
-											<span class="sml-data">€{{ full_order.order.country.shipping_price }}</span>
+											<span class="sml-data">${{ full_order.order.country.shipping_price }}</span>
 										</div>
 
 										<div class="col-9 text-right">
@@ -120,7 +120,7 @@
 										</div>
 										<div class="col-3 text-right">
 											<span
-                                                class="sml-data total">€{{ full_order.total|add:full_order.order.country.shipping_price }}</span>
+                                                class="sml-data total">${{ full_order.total|add:full_order.order.country.shipping_price }}</span>
 										</div>
 
 										<div class="col-8">
