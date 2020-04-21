@@ -190,9 +190,8 @@ h6.sml-cap-heading {
   font-size: 1.3rem;
 }
 
-/* Matches color of other navbar items */
 .fa-shopping-basket.navbar-icon {
-  color: rgba(0, 0, 0, 0.5);
+  color: #ff0000;
 }
 
 /* Positions shopping cart nicely in navbar */
