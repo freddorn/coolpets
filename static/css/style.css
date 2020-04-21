@@ -221,16 +221,19 @@ it partially over the shopping cart icon */
 }
 
 /*--Contact page image--*/
-#beach-dogs {
- display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+.beach-dogs {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 /*--About page image--*/
-.about-pets {
-    height: 200%;
+/*.about-pets {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
 }
 
 /*--Dogs image for account pages--*/
