@@ -118,12 +118,12 @@ h6.sml-cap-heading {
 }
 
 .btn-primary {
-  background-color: #e68186;
+  background-color: #0000ff;
   color: white;
 }
 
 .btn-primary:hover {
-  background-color: #cc5d62;
+  background-color: #8c59b1;
   color: white;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
@@ -144,15 +144,15 @@ h6.sml-cap-heading {
 /* Category buttons on results page */
 
 .btn-primary-outline {
-  border: 1px solid #e68186;
-  color: #e68186;
+  border: 1px solid #0000ff;
+  color: #0000ff;
   margin: 0.25rem;
   font-size: 0.8rem;
   padding: 0.25rem 0.5rem;
 }
 
 .btn-primary-outline:hover {
-  background-color: #e68186;
+  background-color: #0000ff;
   color: white;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
@@ -220,7 +220,7 @@ it partially over the shopping cart icon */
 }
 
 /*--Contact page image--*/
-.beach-dogs {
+#beach-dogs {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -228,7 +228,7 @@ it partially over the shopping cart icon */
 }
 
 /*--About page image--*/
-.about-pets {
+#about-pets {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -420,4 +420,31 @@ footer a:hover {
 Footer height on larger screens is 516px, navbar is 55px */
 .push-footer-down {
   min-height: calc(100vh - (516px + 55px));
+}
+
+/* Styling for home page */
+.home-carousel-item {
+  height: 66vh;
+  width: 100vw;
+}
+
+.carousel-image {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#carousel-img-1 {
+  background-image: url("https://i.ibb.co/PCc011j/Bo.jpg");
+  background-position: center 100%;
+}
+
+#carousel-img-2 {
+  background-image: url("https://i.ibb.co/72n8j05/Chloie.jpg");
+  background-position: center 35%;
+}
+
+#carousel-img-3 {
+  background-image: url("https://i.ibb.co/NTmV5qy/Lena.jpg");
+  background-position: center 35%;
 }
