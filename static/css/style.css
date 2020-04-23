@@ -423,28 +423,9 @@ Footer height on larger screens is 516px, navbar is 55px */
 }
 
 /* Styling for home page */
-.home-carousel-item {
-  height: 66vh;
-  width: 100vw;
-}
-
-.carousel-image {
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-#carousel-img-1 {
-  background-image: url("https://i.ibb.co/PCc011j/Bo.jpg");
-  background-position: center 100%;
-}
-
-#carousel-img-2 {
-  background-image: url("https://i.ibb.co/72n8j05/Chloie.jpg");
-  background-position: center 35%;
-}
-
-#carousel-img-3 {
-  background-image: url("https://i.ibb.co/NTmV5qy/Lena.jpg");
-  background-position: center 35%;
+#collage1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
 }
