@@ -91,7 +91,7 @@
 				<div>
 					<i class="fas fa-shopping-basket navbar-icon"></i>
 					{% if request.session.cart.count and request.session.cart.count != 0 %}
-					<div id="cart-counter">{% if request.session.cart.count > 9 %}9+
+					<div class="cart-counter">{% if request.session.cart.count > 9 %}9+
 						{% else %}{{ request.session.cart.count }}{% endif %}</div>
 					{% endif %}
 				</div>
