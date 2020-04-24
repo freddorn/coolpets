@@ -1,0 +1,54 @@
+{% load staticfiles %}
+
+<!-- collapsible order summary section for mobile screens, hidden on med screen sizes and up -->
+<div class="accordion d-md-none" id="order-summary-mobile">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div class="card">
+
+					<!-- Header with main order details displayed, collapsed but can be opened to full details with a click -->
+					<div class="card-header" id="headingOne">
+						<h2 class="mb-0">
+							<button class="btn btn-link d-flex justify-content-between" type="button"
+                                data-toggle="collapse" data-target="#collapseOne" aria-expanded="false"
+                                aria-controls="collapseOne">
+                                <div>
+                                    <i class="fas fa-shopping-basket"></i>
+                                    <h4>Show order summary </h4>
+                                    <i class="fas fa-chevron-down chevron"></i>
+                                </div>
+
+                                <div class="total ml-auto">$<span
+                                        class="subtotal-js total-js">
+                                        {% if order.country.shipping_price %}
+                                        {{ request.session.cart.total|add:order.country.shipping_price }}.00
+                                        {% else %}
+                                        {{ request.session.cart.total }}
+                                        {% endif %}
+                                    </span></div>
+                            </button>
+						</h2>
+					</div>
+
+					<!-- Collapsed section, displayes all orders in the users cart -->
+					<div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+						data-parent="#order-summary-mobile">
+						<div class="card-body">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-12 text-right">
+										<a href="{% url 'cart' %}">Change</a>
+									</div>
+									{% include 'components/orderitem-list.html' %}
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
