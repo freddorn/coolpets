@@ -490,3 +490,83 @@ Footer height on larger screens is 516px, navbar is 55px */
 .home-category-wrapper-lg h3 {
   font-size: 1.3rem;
 }
+
+/* Styling for product pages */
+#breadcrumbs {
+  margin: 0.5rem 0;
+}
+
+#breadcrumbs a {
+  color: #373737;
+  font-size: 0.8rem;
+  -webkit-transition: 0.2s all ease-in-out 0.3s;
+  transition: 0.2s all ease-in-out 0.3s;
+}
+
+#breadcrumbs a:hover {
+  color: #47b7f8;
+  text-decoration: none;
+}
+
+#breadcrumbs i {
+  color: gold;
+  font-size: 0.6rem;
+}
+
+/* listing cards */
+.listing-img-wrapper {
+  height: 200px;
+  min-width: 175px;
+}
+
+.listing-img {
+  height: 100%;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 35%;
+}
+
+.listing-card {
+  max-width: 300px;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.listing-card-padding {
+  padding: 15px;
+}
+
+.listing-info {
+  padding: 0.5rem 1rem;
+}
+
+.listing-info p {
+  color: #63c4fc;
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.1rem;
+}
+
+.listing-quantity {
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
+.listing-img-main {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.listing-img-thumbnail {
+  height: 65px;
+  width: 65px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center center;
+}
+
+.vh-66 {
+  min-height: 66vh;
+}
