@@ -746,3 +746,32 @@ a.blue-link {
   margin: 0;
   font-weight: bold;
 }
+
+/* Media queries */
+@media screen and (min-width: 768px) {
+  
+  #info-form input.half-md-width {
+    width: 49%;
+    display: inline-block;
+  }
+  .blockquote {
+    height: 200px;
+  }
+  .card-body,
+  .card-header {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-category-wrapper-lg {
+    height: 400px;
+  }
+  .home-category-wrapper-lg h3 {
+    font-size: 2rem;
+  }
+  .blockquote {
+    height: 145px;
+  }
+}
