@@ -570,3 +570,26 @@ Footer height on larger screens is 516px, navbar is 55px */
 .vh-66 {
   min-height: 66vh;
 }
+
+/* Styles for cart and checkout pages */
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0.5rem;
+  border: 1px solid lightgray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#shopping-cart-contents {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+#shopping-cart-contents i {
+  line-height: 1.2rem;
+}
