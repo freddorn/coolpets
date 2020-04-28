@@ -598,3 +598,107 @@ Footer height on larger screens is 516px, navbar is 55px */
 #price {
   margin-bottom: 1.4rem;
 }
+
+/* Progress bar in shopping cart */
+#progress-line {
+  border-top: 1px solid black;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+.progress-step {
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+}
+
+.progress-circle {
+  background-color: white;
+  border: 1px solid #373737;
+  color: #373737;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  line-height: 2.3rem;
+}
+
+.progress-step p {
+  font-size: 0.8rem;
+}
+
+/* places progress circles over joining line */
+#progress-circles {
+  margin-top: -3.3rem;
+}
+
+/* styling progress circle on active step */
+.progress-circle.active {
+  background-color: #63c4fc;
+  color: white;
+}
+
+#checkout-logo,
+#checkout-heading {
+  display: inline-block;
+}
+
+#checkout-logo {
+  width: 80px;
+  margin: 1rem 1rem 1rem 0;
+}
+
+#order-summary-mobile .fa-shopping-basket {
+  color: #373737;
+  font-size: 1.5rem;
+}
+
+#order-summary-mobile .chevron {
+  color: #373737;
+  font-size: 1.1rem;
+}
+
+.link {
+  color: #47b7f8;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.link:hover {
+  color: #63c4fc;
+  text-decoration: none;
+}
+
+.collapse {
+  background-color: #f8f9fa;
+}
+
+.checkout-card {
+  padding: 0.9rem;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.total.ml-auto {
+  margin-right: 0;
+}
+
+a.blue-link {
+  color: #47b7f8;
+}
+
+.country-info {
+  color: #63c4fc;
+  cursor: pointer;
+}
+
+.card-body,
+.card-header {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.card.order-card {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 6px !important;
+}
