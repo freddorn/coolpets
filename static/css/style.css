@@ -593,3 +593,8 @@ Footer height on larger screens is 516px, navbar is 55px */
 #shopping-cart-contents i {
   line-height: 1.2rem;
 }
+
+/* pushes price up to be in line with quantity select field */
+#price {
+  margin-bottom: 1.4rem;
+}
