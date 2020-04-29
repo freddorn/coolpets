@@ -22,41 +22,49 @@
 	</div>
 </div>
 
-<div class="container pb-5 push-footer-down">
-	<div class="row justify-content-center">
-		<div class="col-12 col-lg-6">
-
-			<!-- User can update profile info here -->
-			<form method="POST">
-				{% csrf_token %}
-				<fieldset class="form-group">
-					<legend class="border-bottom py-4 primary-uppercase">Profile Info</legend>
-					{{ form|crispy }}
-				</fieldset>
-				<div class="form-group">
-					<button class="btn btn-primary btn-cta m-0" type="submit">Update</button>
-				</div>
-			</form>
-
+<div class="container-fluid justify-content-center">
+	<div class="row">
+		<div class="col my-4">
+			<img class="dogs-accounts" src="https://i.ibb.co/KXbCvwc/dogs.jpg" alt="dogs-accounts">
+            </div>
 		</div>
+	</div>
 
-		<div class="col-12 col-lg-6">
+	<div class="container pb-5 push-footer-down">
+		<div class="row justify-content-center">
+			<div class="col-12 col-lg-6">
 
-			<!--
+				<!-- User can update profile info here -->
+				<form method="POST">
+					{% csrf_token %}
+					<fieldset class="form-group">
+						<legend class="border-bottom py-4 primary-uppercase">Profile Info</legend>
+						{{ form|crispy }}
+					</fieldset>
+					<div class="form-group">
+						<button class="btn btn-primary btn-cta m-0" type="submit">Update</button>
+					</div>
+				</form>
+
+			</div>
+
+			<div class="col-12 col-lg-6">
+
+				<!--
                 Section that displays all the users paid orders. 
                 First order accordion is open, all others after that are closed, 
                 but can be opened with a click
             -->
-			<legend class="border-bottom py-4 primary-uppercase">My Orders</legend>
-			<div class="row no-gutters">
+				<legend class="border-bottom py-4 primary-uppercase">My Orders</legend>
+				<div class="row no-gutters">
 
-				<div class="col-12">
-					{% if all_orders %}
-					{% for full_order in all_orders %}
-					<div id="orders-accordion-{{ forloop.counter }}" class="accordion mb-3">
-						<div class="card order-card small-box-shadow small-box-shadow-hover">
-							<div class="card-header p-0 py-2" id="heading-{{ forloop.counter }}">
-								<button class="btn btn-link accordion-btn" type="button" data-toggle="collapse"
+					<div class="col-12">
+						{% if all_orders %}
+						{% for full_order in all_orders %}
+						<div id="orders-accordion-{{ forloop.counter }}" class="accordion mb-3">
+							<div class="card order-card small-box-shadow small-box-shadow-hover">
+								<div class="card-header p-0 py-2" id="heading-{{ forloop.counter }}">
+									<button class="btn btn-link accordion-btn" type="button" data-toggle="collapse"
                                     data-target="#collapse-{{ forloop.counter }}" aria-expanded="true"
                                     aria-controls="collapse-{{ forloop.counter }}">
                                     <div class="row">
@@ -78,54 +86,54 @@
                                         </div>
                                     </div>
                                 </button>
-							</div>
+								</div>
 
-							<div id="collapse-{{ forloop.counter }}"
-								class="collapse p-0 order-summary-short {% if forloop.counter == 1 %} show{% endif %} "
-								aria-labelledby="heading-{{ forloop.counter }}"
-								data-parent="#orders-accordion-{{ forloop.counter }}">
-								<div class="card-body px-2">
-									<div class="row">
-										<div class="col-6">
-											<h6 class="sml-cap-heading">Item</h6>
-										</div>
-										<div class="col-3 text-right">
-											<h6 class="sml-cap-heading">Qty</h6>
-										</div>
-										<div class="col-3 text-right">
-											<h6 class="sml-cap-heading">Price</h6>
-										</div>
+								<div id="collapse-{{ forloop.counter }}"
+									class="collapse p-0 order-summary-short {% if forloop.counter == 1 %} show{% endif %} "
+									aria-labelledby="heading-{{ forloop.counter }}"
+									data-parent="#orders-accordion-{{ forloop.counter }}">
+									<div class="card-body px-2">
+										<div class="row">
+											<div class="col-6">
+												<h6 class="sml-cap-heading">Item</h6>
+											</div>
+											<div class="col-3 text-right">
+												<h6 class="sml-cap-heading">Qty</h6>
+											</div>
+											<div class="col-3 text-right">
+												<h6 class="sml-cap-heading">Price</h6>
+											</div>
 
-										{% for order_item in full_order.order_items %}
-										<div class="col-6">
-											<span class="sml-data">{{ order_item.product.title }}</span>
-										</div>
-										<div class="col-3 text-right">
-											<span class="sml-data">{{ order_item.quantity }}</span>
-										</div>
-										<div class="col-3 text-right">
-											<span class="sml-data">${{ order_item.product.price }}</span>
-										</div>
-										{% endfor %}
+											{% for order_item in full_order.order_items %}
+											<div class="col-6">
+												<span class="sml-data">{{ order_item.product.title }}</span>
+											</div>
+											<div class="col-3 text-right">
+												<span class="sml-data">{{ order_item.quantity }}</span>
+											</div>
+											<div class="col-3 text-right">
+												<span class="sml-data">${{ order_item.product.price }}</span>
+											</div>
+											{% endfor %}
 
-										<div class="col-9 text-right">
-											<span class="sml-data">DHL tracked Shipping</span>
-										</div>
-										<div class="col-3 text-right">
-											<span class="sml-data">${{ full_order.order.country.shipping_price }}</span>
-										</div>
+											<div class="col-9 text-right">
+												<span class="sml-data">DHL tracked Shipping</span>
+											</div>
+											<div class="col-3 text-right">
+												<span class="sml-data">${{ full_order.order.country.shipping_price }}</span>
+											</div>
 
-										<div class="col-9 text-right">
-											<span class="sml-data total">TOTAL</span>
-										</div>
-										<div class="col-3 text-right">
-											<span
+											<div class="col-9 text-right">
+												<span class="sml-data total">TOTAL</span>
+											</div>
+											<div class="col-3 text-right">
+												<span
                                                 class="sml-data total">${{ full_order.total|add:full_order.order.country.shipping_price }}</span>
-										</div>
+											</div>
 
-										<div class="col-8">
-											<h6 class="sml-cap-heading">Shipping address:</h6>
-											<p class="sml-data">{{ full_order.order.full_name }},<br>
+											<div class="col-8">
+												<h6 class="sml-cap-heading">Shipping address:</h6>
+												<p class="sml-data">{{ full_order.order.full_name }},<br>
                                                 {{ full_order.order.address_line_1 }},<br>
                                                 {% if full_order.order.address_line_2 %}
                                                 {{ full_order.order.address_line_2 }},<br>
@@ -136,39 +144,39 @@
                                                 {% endif %}
                                                 {{ full_order.order.postcode }},<br>
                                                 {{ full_order.order.country }}</p>
-										</div>
-										<div class="col-4">
-											<span class="sml-data">STATUS</span>
-											<div class="sml-data">
-												{% if full_order.order.shipped %}
-												Shipped
-												{% else %}
-												Being processed<br><br>
-												<a href="{% url 'contact' %}">Request Order Cancellation</a>
-												{% endif %}
+											</div>
+											<div class="col-4">
+												<span class="sml-data">STATUS</span>
+												<div class="sml-data">
+													{% if full_order.order.shipped %}
+													Shipped
+													{% else %}
+													Being processed<br><br>
+													<a href="{% url 'contact' %}">Request Order Cancellation</a>
+													{% endif %}
+												</div>
 											</div>
 										</div>
-									</div>
 
+									</div>
 								</div>
 							</div>
 						</div>
+
+						{% endfor %}
+						{% endif %}
+
 					</div>
 
-					{% endfor %}
+					{% if all_orders %}
+
+					{% else %}
+					<p>No orders to show.</p>
 					{% endif %}
-
 				</div>
-
-				{% if all_orders %}
-
-				{% else %}
-				<p>No orders to show.</p>
-				{% endif %}
 			</div>
 		</div>
 	</div>
-</div>
 
 
-{% endblock %}
+	{% endblock %}
