@@ -302,22 +302,6 @@ a:hover {
   width: auto;
 }
 
-/*  overrides bootstrap navbar padding to 
-    make it more streamlined */
-.navbar {
-  padding: 0 1rem;
-}
-
-.small-box-shadow {
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
-}
-
-.sm-box-shadow-hover:hover {
-  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);
-  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.16), 0 4px 8px rgba(0, 0, 0, 0.23);
-}
-
 /* Styling for footer */
 #footer {
   background-color: #373737;
@@ -431,7 +415,6 @@ Footer height on larger screens is 516px, navbar is 55px */
 }
 
 /* category images and headings */
-/* home-category-wrapper-lg is larger on desktop, see media queries */
 .home-category-wrapper-lg,
 .home-category-wrapper {
   height: 250px;
