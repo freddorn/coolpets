@@ -415,7 +415,10 @@ Footer height on larger screens is 516px, navbar is 55px */
 }
 
 /* category images and headings */
-.home-category-wrapper-lg,
+.home-category-wrapper-lg {
+    height: 250px;
+    padding: 15px;
+}
 .home-category-wrapper {
   height: 250px;
   padding: 15px;
@@ -424,7 +427,7 @@ Footer height on larger screens is 516px, navbar is 55px */
 .category-img {
   height: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   border-radius: 8px;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
@@ -442,31 +445,31 @@ Footer height on larger screens is 516px, navbar is 55px */
 }
 
 #category-img-1 {
-  background-image: url("https://i.ibb.co/xjWFsLR/Leashes.jpg");
+  background-image: url("https://i.ibb.co/zG8Y7fK/Leashes.jpg");
 }
 
 #category-img-2 {
-  background-image: url("https://i.ibb.co/k5wFJ0L/Collars.jpg");
+  background-image: url("https://i.ibb.co/CW77pq1/Collars.jpg");
 }
 
 #category-img-3 {
-  background-image: url("https://i.ibb.co/rdD4DQm/Beds.jpg");
+  background-image: url("https://i.ibb.co/YT0xK3x/Beds.jpg");
 }
 
 #category-img-4 {
-  background-image: url("https://i.ibb.co/tJDvBFb/Carriers.jpg");
+  background-image: url("https://i.ibb.co/SRLFBc1/Carriers.jpg");
 }
 
 #category-img-5 {
-  background-image: url("https://i.ibb.co/fGKdSbm/Feeding.jpg");
+  background-image: url("https://i.ibb.co/0CWWFQ5/Feeding.jpg");
 }
 
 #category-img-6 {
-  background-image: url("https://i.ibb.co/G2ttpXn/Harnesses.jpg");
+  background-image: url("https://i.ibb.co/sRSdGSM/Harnesses.jpg");
 }
 
 #category-img-7 {
-  background-image: url("https://i.ibb.co/7CqTWSg/Toys.jpg");
+  background-image: url("https://i.ibb.co/2Zjc25x/Toys.jpg");
 }
 
 .home-category-wrapper h3,
