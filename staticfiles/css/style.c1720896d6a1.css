@@ -1,0 +1,762 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700');
+
+/*--Font and Text styles--*/
+body {
+  font-family: "Roboto", sans-serif;
+  color: #666666;
+}
+
+h1 {
+  margin-top: 1.5rem;
+}
+
+h1, h2, h3 {
+  font-family: "Roboto", sans-serif;
+}
+
+h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
+
+h6.total {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+#shipping-options h6 {
+  text-transform: none;
+}
+
+footer h5 {
+  color: #ffa500;
+}
+
+#listing-description h5 {
+  font-size: 1rem;
+}
+
+#home-header p {
+  margin-bottom: 0.75rem;
+}
+
+/* Shopping cart fonts */
+#shopping-cart-contents h4 {
+  font-size: 1rem;
+}
+
+#subtotal {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+#order-summary-mobile h4,
+.total {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  color: #373737;
+  margin: 0 1rem;
+  display: inline;
+  text-transform: none;
+}
+
+.checkout-heading {
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+#total {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Listing fonts */
+.listing-info h5 {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.listing-card h5 {
+  color: #373737;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.listing-card h5:hover {
+  color: #b34708;
+}
+
+/* Headings for displaying orders */
+h6.sml-cap-heading {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.sml-data {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+}
+
+/* Styling for all call to action buttons */
+
+.btn-cta {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  padding: 0.4rem 1rem;
+  margin: 1rem;
+}
+
+.btn-primary {
+  background-color: #0000ff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #8c59b1;
+  color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.btn-blue {
+  background-color: #63c4fc;
+  color: white;
+}
+
+.btn-blue:hover {
+  background-color: #47b7f8;
+  color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+/* Category buttons on results page */
+
+.btn-primary-outline {
+  border: 1px solid #0000ff;
+  color: #0000ff;
+  margin: 0.25rem;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-primary-outline:hover {
+  background-color: #0000ff;
+  color: white;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16), 0 2px 4px rgba(0, 0, 0, 0.23);
+}
+
+.btn-shop {
+  width: 100%;
+  margin: 0;
+}
+
+#pay-now-btn {
+  min-width: 300px;
+}
+
+.accordion-btn {
+  width: 100%;
+}
+
+#order-summary-mobile button {
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Styles for site icons */
+#logo {
+  height: 45px;
+}
+
+/* Gives shopping cart and favs icons the right sizing */
+.navbar-icon {
+  font-size: 2rem;
+}
+
+.navbar-search-icon {
+  font-size: 1.3rem;
+}
+
+.fa-shopping-basket.navbar-icon {
+  color: #ff0000;
+}
+
+/* Positions shopping cart nicely in navbar */
+.nav-link-icon {
+  padding: 0 5px;
+  display: inline-block;
+}
+
+/* Styles shopping cart counter and positions 
+it partially over the shopping cart icon */
+.cart-counter {
+  background-color: #63c4fc;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin-left: -18px;
+}
+.listing-price {
+  color: #63c4fc;
+  font-size: 1.5rem;
+}
+
+/*--Contact page image--*/
+#beach-dogs {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/*--About page image--*/
+#about-pets {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/*--Dogs image for account pages--*/
+.dogs-accounts {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Delete icon in cart page */
+.fa-times-circle {
+  -webkit-transition: 0.2s all ease-in-out 0.1s;
+  transition: 0.2s all ease-in-out 0.1s;
+}
+
+.fa-times-circle:hover {
+  color: red;
+}
+
+.orders-icon {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  -webkit-transition: 0.2s all ease-in-out 0.1s;
+  transition: 0.2s all ease-in-out 0.1s;
+}
+
+.orders-icon:hover {
+  color: #cc5d62;
+}
+
+/* icons on home page */
+.icon-box-wrapper,
+.icon-box {
+  display: inline-block;
+}
+
+.icon-box {
+  width: 200px;
+  margin: 1rem;
+}
+
+.icon-box-wrapper i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.icon-box p {
+  font-size: 1rem;
+  color: #e68186;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+
+a {
+  color: #63c4fc;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #47b7f8;
+}
+
+#searchbox {
+  width: auto;
+}
+
+/* Styling for footer */
+#footer {
+  background-color: #373737;
+  padding: 1.5rem;
+}
+
+footer li {
+  list-style: none;
+}
+
+footer ul {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-heading {
+  margin-bottom: 2rem;
+}
+
+footer a {
+  color: #f8f9fa;
+  -webkit-transition: 0.3s all ease-in-out 0.2s;
+  transition: 0.3s all ease-in-out 0.2s;
+}
+
+footer a:hover {
+  color: #e68186;
+  text-decoration: none;
+}
+
+.order-card {
+  background-color: #E5E5E5;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+/*--Contact Form--*/
+.contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+        margin: 0px;
+    padding: 20px;
+}
+
+.center-form {
+    displaY: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+}
+
+#form {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#form>input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    width: 50vw;
+    height: 30px;
+}
+
+#form>textarea {
+    height: 80px;
+    width: 50vw;
+    margin-left: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Overrides bootstrap margin-bottom on alert messages */
+.alert {
+  margin: 0;
+}
+
+#results-sort-select {
+  max-width: 200px;
+}
+
+/* Sweetalert syles */
+.swal2-popup h2 {
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
+}
+
+.sml-txt {
+  font-size: 0.9rem;
+}
+
+/* pushes footer down on larger screens */
+.push-footer-down {
+  min-height: 80vh;
+}
+
+/* Styling for home page */
+#collage1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 65%;
+}
+
+/* category images and headings */
+.home-category-wrapper-lg {
+    height: 250px;
+    padding: 15px;
+}
+.home-category-wrapper {
+  height: 250px;
+  padding: 15px;
+}
+
+.category-img {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 8px;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+  background-position: center 35%;
+}
+
+.category-img h3 {
+  color: #373737;
+}
+
+.category-heading-box {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#category-img-1 {
+  background-image: url("https://i.ibb.co/zG8Y7fK/Leashes.jpg");
+}
+
+#category-img-2 {
+  background-image: url("https://i.ibb.co/CW77pq1/Collars.jpg");
+}
+
+#category-img-3 {
+  background-image: url("https://i.ibb.co/YT0xK3x/Beds.jpg");
+}
+
+#category-img-4 {
+  background-image: url("https://i.ibb.co/SRLFBc1/Carriers.jpg");
+}
+
+#category-img-5 {
+  background-image: url("https://i.ibb.co/0CWWFQ5/Feeding.jpg");
+}
+
+#category-img-6 {
+  background-image: url("https://i.ibb.co/sRSdGSM/Harnesses.jpg");
+}
+
+#category-img-7 {
+  background-image: url("https://i.ibb.co/2Zjc25x/Toys.jpg");
+}
+
+.home-category-wrapper h3,
+.home-category-wrapper-lg h3 {
+  font-size: 1.3rem;
+}
+
+/* Styling for product pages */
+#breadcrumbs {
+  margin: 0.5rem 0;
+}
+
+#breadcrumbs a {
+  color: #373737;
+  font-size: 0.8rem;
+  -webkit-transition: 0.2s all ease-in-out 0.3s;
+  transition: 0.2s all ease-in-out 0.3s;
+}
+
+#breadcrumbs a:hover {
+  color: #47b7f8;
+  text-decoration: none;
+}
+
+#breadcrumbs i {
+  color: gold;
+  font-size: 0.6rem;
+}
+
+/* listing cards */
+.listing-img-wrapper {
+  height: 200px;
+  min-width: 175px;
+}
+
+.listing-img {
+  height: 100%;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 35%;
+}
+
+.listing-card {
+  max-width: 300px;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.listing-card-padding {
+  padding: 15px;
+}
+
+.listing-info {
+  padding: 0.5rem 1rem;
+}
+
+.listing-info p {
+  color: #63c4fc;
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.1rem;
+}
+
+.listing-quantity {
+  max-width: 100px;
+  margin-bottom: 1rem;
+}
+
+.listing-img-main {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.listing-img-thumbnail {
+  height: 65px;
+  width: 65px;
+  display: inline-block;
+  background-size: cover;
+  background-position: center center;
+}
+
+.vh-66 {
+  min-height: 66vh;
+}
+
+/* Styles for cart and checkout pages */
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 0.5rem;
+  border: 1px solid lightgray;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#shopping-cart-contents {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+}
+
+#shopping-cart-contents i {
+  line-height: 1.2rem;
+}
+
+/* pushes price up to be in line with quantity select field */
+#price {
+  margin-bottom: 1.4rem;
+}
+
+/* Progress bar in shopping cart */
+#progress-line {
+  border-top: 1px solid black;
+  margin: 2rem auto;
+  width: 80%;
+}
+
+.progress-step {
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+}
+
+.progress-circle {
+  background-color: white;
+  border: 1px solid #373737;
+  color: #373737;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  line-height: 2.3rem;
+}
+
+.progress-step p {
+  font-size: 0.8rem;
+}
+
+/* places progress circles over joining line */
+#progress-circles {
+  margin-top: -3.3rem;
+}
+
+/* styling progress circle on active step */
+.progress-circle.active {
+  background-color: #63c4fc;
+  color: white;
+}
+
+#checkout-logo,
+#checkout-heading {
+  display: inline-block;
+}
+
+#checkout-logo {
+  width: 80px;
+  margin: 1rem 1rem 1rem 0;
+}
+
+#order-summary-mobile .fa-shopping-basket {
+  color: #373737;
+  font-size: 1.5rem;
+}
+
+#order-summary-mobile .chevron {
+  color: #373737;
+  font-size: 1.1rem;
+}
+
+.link {
+  color: #47b7f8;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.link:hover {
+  color: #63c4fc;
+  text-decoration: none;
+}
+
+.collapse {
+  background-color: #f8f9fa;
+}
+
+.checkout-card {
+  padding: 0.9rem;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+.total.ml-auto {
+  margin-right: 0;
+}
+
+a.blue-link {
+  color: #47b7f8;
+}
+
+.country-info {
+  color: #63c4fc;
+  cursor: pointer;
+}
+
+.card-body,
+.card-header {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.card.order-card {
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 6px !important;
+}
+
+/* Styles for cards displaying order information */
+.full-order-card {
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  background-color: white;
+}
+
+.card-header {
+  background-color: #dbf1ff;
+}
+
+.card-header button {
+  text-align: left;
+  color: #373737;
+  -webkit-transition: 0.2s all ease-in-out 0.2s;
+  transition: 0.2s all ease-in-out 0.2s;
+}
+
+.card-header button:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.card-header button:focus {
+  text-decoration: none;
+  color: black;
+}
+
+.order-footer {
+  border-top: 1px solid lightgray;
+  padding: 1rem 0.5rem;
+  border-radius: 0 0 6px 6px;
+}
+
+.order-summary-short {
+  padding: 1rem;
+}
+
+.sml-data.total {
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Media queries */
+@media screen and (min-width: 768px) {
+  
+  #info-form input.half-md-width {
+    width: 49%;
+    display: inline-block;
+  }
+  .blockquote {
+    height: 200px;
+  }
+  .card-body,
+  .card-header {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .home-category-wrapper-lg {
+    height: 400px;
+  }
+  .home-category-wrapper-lg h3 {
+    font-size: 2rem;
+  }
+  .blockquote {
+    height: 145px;
+  }
+}
