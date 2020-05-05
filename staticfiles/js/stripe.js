@@ -1,26 +1,32 @@
-/**
- * Gets key from obfusicate.js file
- */
-const s_pub = returnStripePublishableKey();
+$(function () {
+    $("#payment-form").submit(function () {
+        var form = this;
+        var card = {
+            number: $("#id_credit_card_number").val(),
+            expMonth: $("#id_expiry_month").val(),
+            expYear: $("#id_expiry_year").val(),
+            cvc: $("#id_cvv").val()
+        };
 
-// // All code below provided by https://stripe.com/docs/payments/cards/collecting/web
+        Stripe.createToken(card, function (status, response) {
+            if (status === 200) {
+                $("#credit-card-errors").hide();
+                $("#id_stripe_id").val(response.id);
 
-let stripe = Stripe(s_pub);
-let elements = stripe.elements();
+                // Prevent the credit card details from being submitted
+                // to our server
+                $("#id_credit_card_number").removeAttr('name');
+                $("#id_cvv").removeAttr('name');
+                $("#id_expiry_month").removeAttr('name');
+                $("#id_expiry_year").removeAttr('name');
 
-$('#submit-payment-btn').click(function () {
-    startCheckout();
-});
-
-/**
- * Activates stripe v3 checkout page
- */
-async function startCheckout() {
-    const { error } = await stripe.redirectToCheckout({
-        sessionId: s_id
+                form.submit();
+            } else {
+                $("#stripe-error-message").text(response.error.message);
+                $("#credit-card-errors").show();
+                $("#validate_card_btn").attr("disabled", false);
+            }
+        });
+        return false;
     });
-
-    if (error) {
-        alert('Something went wrong with the payment, please try again.');
-    }
-}
+});
