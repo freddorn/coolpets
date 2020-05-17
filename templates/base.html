@@ -15,11 +15,6 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="shortcut icon" href="{% static 'images/favicon.png' type='image/x-icon' %}">
 	<script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-	<script type="text/javascript">
-		(function() {
-            emailjs.init("user_TGhwYicv1LfFn7U4L5whv");
-        })();
-	</script>
 
 	<title>Cool Pets</title>
 </head>
@@ -70,6 +65,9 @@
 	{% endif %}
 	<script src="{% static 'js/stripe.js' %}"></script>
 	{% if page == "contact" %}
+    <script type="text/javascript">
+        const ejs = '{{emailjs_user_id}}';
+    </script>
 	<script src="{% static 'js/emailjs.js' %}"></script>
 	{% endif %}
 </body>
