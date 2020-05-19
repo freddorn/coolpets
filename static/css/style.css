@@ -550,7 +550,7 @@ footer a:hover {
   display: inline-block;
   background-size: cover;
   background-position: center;
-  background-color: #f2f2f2;
+  margin-bottom: 15px;
   }
 
 .vh-66 {
