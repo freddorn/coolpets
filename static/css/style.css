@@ -550,6 +550,7 @@ footer a:hover {
   display: inline-block;
   background-size: cover;
   background-position: center center;
+  border: 2px #000000;
 }
 
 .vh-66 {
