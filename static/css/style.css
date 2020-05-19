@@ -549,9 +549,9 @@ footer a:hover {
   width: 65px;
   display: inline-block;
   background-size: cover;
-  background-position: center center;
-  border: 10px #000000;
-}
+  background-position: center;
+  background-color: #f2f2f2;
+  }
 
 .vh-66 {
   min-height: 66vh;
