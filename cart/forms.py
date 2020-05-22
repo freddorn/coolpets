@@ -26,7 +26,7 @@ class NewOrderForm(forms.ModelForm):
             'address_line_1',
             'address_line_2',
             'town_or_city',
-            'state_or_province',
+            'state',
             'postcode',
             'country',
         ]
