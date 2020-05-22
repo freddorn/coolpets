@@ -28,7 +28,7 @@ class Order(models.Model):
     address_line_1 = models.CharField(max_length=150, null=True)
     address_line_2 = models.CharField(max_length=150, blank=True, null=True)
     town_or_city = models.CharField(max_length=150, null=True)
-    state = models.CharField(max_length=150, blank=True, null=True)
+    state = models.CharField(max_length=150, null=True)
     postcode = models.CharField(max_length=10, null=True)
     country = models.ForeignKey(
         ShippingDestination, on_delete=models.PROTECT, null=True)
