@@ -34,7 +34,6 @@
                     {{ order.country }}</p>
 			</div>
 
-			<!-- Form options currently not actually used, but added so additional shipping options can be added in future! -->
 			<form method="POST">
 				{% csrf_token %}
 				<h6 class="checkout-heading mt-4">Shipping method</h6>
@@ -43,15 +42,15 @@
 						<div class="row justify-content-between">
 							<div class="col-8">
 								<div class="form-check">
-									<input class="form-check-input" type="radio" name="shippingMethodRadios" id="dhl"
+									<input class="form-check-input" type="radio" name="shippingMethodRadios" id="sta"
                                         value="option1" checked>
-									<label class="form-check-label" for="dhl">
-                                        DHL signed parcel
+									<label class="form-check-label" for="sta">
+                                        Standard Shipping
                                     </label>
 								</div>
 							</div>
 							<div class="col-4 text-right">
-								€{{ order.country.shipping_price }}
+								${{ order.country.shipping_price }}
 							</div>
 						</div>
 					</div>
@@ -68,7 +67,7 @@
 
 			<div class="row">
 				<div class="col-9">
-					<h3 class="checkout-heading pb-3 px-3">Your order summary</h3>
+					<h3 class="checkout-heading pb-3 px-3">Your Order Summary</h3>
 				</div>
 				<div class="col-3 text-right"><a href="{% url 'cart' %}">Change</a></div>
 				{% include 'components/orderitem-list.html' %}
@@ -79,7 +78,7 @@
 		<div class="col-12 text-center text-md-left p-3">
 			<div class="text-center text-md-left my-2">
 				<a href="{% url 'info' %}" class="mx-auto blue-link"><i class="fas fa-arrow-left"></i> Return to
-					information</a>
+					Information</a>
 			</div>
 		</div>
 
