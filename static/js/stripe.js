@@ -1,21 +1,12 @@
-// // All code below provided by https://stripe.com/docs/payments/cards/collecting/web
+var stripe = Stripe('pk_test_Bg9povZBdi6gNH7dcYIoVmAm00lXpzmA8k');
 
-let stripe = Stripe(s_pub);
-let elements = stripe.elements();
-
-$('#submit-payment-btn').click(function () {
-    startCheckout();
+stripe.redirectToCheckout({
+    // Make the id field from the Checkout Session creation API response
+    // available to this file, so you can provide it as parameter here
+    // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+    sessionId: '{{CHECKOUT_SESSION_ID}}'
+}).then(function (result) {
+    // If `redirectToCheckout` fails due to a browser or network
+    // error, display the localized error message to your customer
+    // using `result.error.message`.
 });
-
-/**
- * Activates stripe v3 checkout page
- */
-async function startCheckout() {
-    const { error } = await stripe.redirectToCheckout({
-        sessionId: s_id
-    });
-
-    if (error) {
-        alert('Something went wrong with the payment, please try again.');
-    }
-}
