@@ -1,12 +1,21 @@
-var stripe = Stripe('pk_test_Bg9povZBdi6gNH7dcYIoVmAm00lXpzmA8k');
+var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
+var clientSecret = $('#id_client_secret').text().slice(1, -1);
+var stripe = Stripe(stripePublicKey);
+var elements = stripe.elements();
 
-stripe.redirectToCheckout({
-    // Make the id field from the Checkout Session creation API response
-    // available to this file, so you can provide it as parameter here
-    // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
-    sessionId: '{{CHECKOUT_SESSION_ID}}'
-}).then(function (result) {
-    // If `redirectToCheckout` fails due to a browser or network
-    // error, display the localized error message to your customer
-    // using `result.error.message`.
+$('#submit-payment-btn').click(function() {
+    startCheckout();
 });
+
+/**
+ * Activates stripe v3 checkout page
+ */
+async function startCheckout() {
+    const {error} = await stripe.redirectToCheckout({
+        sessionId: s_id
+    });
+
+    if (error) {
+        alert('Something went wrong with the payment, please try again.');
+    }
+}
