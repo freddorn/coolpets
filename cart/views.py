@@ -165,7 +165,6 @@ def checkout_shipping_view(request, *args, **kwargs):
         line_items.append(shipping_item)
 
         session = stripe.checkout.Session.create(
-            payment_method=['card'],
             payment_method_types=['card'],
             line_items=line_items,
             success_url=STRIPE_SUCCESS_URL,
