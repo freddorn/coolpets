@@ -76,11 +76,6 @@
 								<form id="payment-form" method="post" action="{% url 'new_feature' %}"
 									data-token="{{ publishable }}">
 									{% csrf_token %}
-									<div class="row">
-										<div class="col s12">
-											{{ feature_form|materializecss }}
-										</div>
-									</div>
 									<h3 class="purple-text text-darken-3 bold">Payment Details:</h3>
 									<!-- stripe element will be inserted in this div -->
 									<div class="row">
