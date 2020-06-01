@@ -67,8 +67,7 @@
 					<div class="card-border">
 						<div class="card">
 							<div class="card-content">
-								<form id="payment-form" method="post" action="{% url 'checkout_shipping' %}"
-									data-token="{{ publishable }}">
+								<form id="payment-form" method="post" %}" data-token="{{ publishable }}">
 									{% csrf_token %}
 									<h3 class="purple-text text-darken-3 bold">Payment Details:</h3>
 									<!-- stripe element will be inserted in this div -->
@@ -79,7 +78,7 @@
 									</div>
 									<br><br>
 									<button type="submit" class="btn">Submit Payment</button>
-									<a href="{% url 'all_tickets' %}" class="btn red">Cancel</a>
+									<a href="{% url 'checkout_confirm' %}" class="btn red">Cancel</a>
 								</form>
 							</div>
 						</div>
