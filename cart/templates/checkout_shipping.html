@@ -67,13 +67,7 @@
 					<div class="card-border">
 						<div class="card">
 							<div class="card-content">
-								<h1 class="center-align purple-text text-darken-3 upper">
-									Feature Request
-								</h1>
-								<h2 class="center-align purple-text text-darken-3 upper">
-									There is a €100 fee to make a feature request
-								</h2>
-								<form id="payment-form" method="post" action="{% url 'new_feature' %}"
+								<form id="payment-form" method="post" action="{% url 'checkout_shipping' %}"
 									data-token="{{ publishable }}">
 									{% csrf_token %}
 									<h3 class="purple-text text-darken-3 bold">Payment Details:</h3>
