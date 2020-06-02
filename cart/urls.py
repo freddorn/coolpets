@@ -3,8 +3,7 @@ from .views import (
     cart_view,
     checkout_info_view,
     checkout_shipping_view,
-    checkout_confirm_view,
-    checkout_payment_view,
+    checkout_confirm_view
 )
 
 urlpatterns = [
@@ -12,6 +11,5 @@ urlpatterns = [
     path('checkout/info/', checkout_info_view, name="info"),
     path('checkout/shipping/', checkout_shipping_view, name="shipping"),
     path('checkout/confirm/<str:session_id>/',
-         checkout_confirm_view, name="confirm"),
-    path('checkout/payment/', checkout_payment_view, name="payment")
+         checkout_confirm_view, name="confirm")
 ]
