@@ -4,8 +4,8 @@ var clientSecret = $('#id_client_secret').text().slice(1, -1);
 
 // // All code below provided by https://stripe.com/docs/payments/cards/collecting/web
 
-let stripe = Stripe(s_pub);
-let elements = stripe.elements();
+var stripe = Stripe(stripePublicKey);
+var elements = stripe.elements();
 
 $('#submit-payment-btn').click(function () {
     startCheckout();
