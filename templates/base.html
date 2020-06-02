@@ -65,7 +65,7 @@
 
 	{% if stripe_session_id %}
 	<script type="text/javascript">
-		const s_id = '{{ stripe_session_id }}';
+		const s_id = 'stripe_session_id';
 	</script>
 	{% endif %}
 	<script src="{% static 'js/stripe.js' %}"></script>
