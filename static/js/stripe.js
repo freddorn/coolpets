@@ -1,4 +1,4 @@
-const s_pub = ('pk_test_Bg9povZBdi6gNH7dcYIoVmAm00lXpzmA8k');
+const s_pub = ('STRIPE_PUBLISHABLE');
 
 
 // // All code below provided by https://stripe.com/docs/payments/cards/collecting/web
