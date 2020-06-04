@@ -15,7 +15,7 @@ $('#submit-payment-btn').click(function () {
  */
 async function startCheckout() {
     const { error } = await stripe.redirectToCheckout({
-        sessionId: Data.sessionId,
+        sessionId: s_id
     });
 
     if (error) {
