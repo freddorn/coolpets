@@ -63,10 +63,12 @@
 	<script src="{% static 'js/requests.js' %}"></script>
 	{% endif %}
 
-	{% if stripe_session_id %}
-	<script type="text/javascript">
-		const s_id = 'stripe_session_id';
-	</script>
+	{% if sessionId %}
+	
+	fetch('/checkout-session?sessionId=' + sessionId)
+	.then(function (result) {
+	return result.json();
+	})
 	{% endif %}
 	<script src="{% static 'js/stripe.js' %}"></script>
 	{% if page == "contact" %}
