@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/freddorn/coolpets.svg?branch=master)](https://travis-ci.org/freddorn/coolpets)
+
 # Your Project's Name
 
 One or two paragraphs providing an overview of your project.
