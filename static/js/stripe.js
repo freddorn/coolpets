@@ -14,7 +14,7 @@ $('#submit-payment-btn').click(function () {
  * Activates stripe v3 checkout page
  */
 async function startCheckout() {
-    const { error } = await stripe.redirectToCheckout({
+    const {error} = await stripe.redirectToCheckout({
         sessionId: s_id
     });
 
