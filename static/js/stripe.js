@@ -1,7 +1,6 @@
 const s_pub = ('STRIPE_PUBLISHABLE');
 
 
-// // All code below provided by https://stripe.com/docs/payments/cards/collecting/web
 
 let stripe = Stripe(s_pub);
 let elements = stripe.elements();

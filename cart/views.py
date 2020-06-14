@@ -1,10 +1,10 @@
 import json
+import stripe
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.forms import formset_factory
 from django.conf import settings
-import stripe  # pylint error appears for this import, but code imported works!
 from products.models import Product
 from .forms import OrderItemForm, NewOrderForm
 from .models import Order, OrderItem, ShippingDestination
@@ -167,6 +167,7 @@ def checkout_shipping_view(request, *args, **kwargs):
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=line_items,
+            mode='payment',
             success_url=STRIPE_SUCCESS_URL,
             cancel_url=STRIPE_CANCEL_URL,
         )
