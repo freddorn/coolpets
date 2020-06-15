@@ -24,12 +24,12 @@ class Order(models.Model):
     """
 
     customer = models.ForeignKey(User, on_delete=models.PROTECT)
-    full_name = models.CharField(max_length=150, blank=False)
-    address_line_1 = models.CharField(max_length=150, blank=False)
-    address_line_2 = models.CharField(max_length=150, blank=True)
-    town_or_city = models.CharField(max_length=150, blank=False)
-    state = models.CharField(max_length=150, blank=False)
-    postcode = models.CharField(max_length=10, blank=False)
+    full_name = models.CharField(max_length=150, blank=False, null=True)
+    address_line_1 = models.CharField(max_length=150, blank=False, null=True)
+    address_line_2 = models.CharField(max_length=150, blank=True, null=True)
+    town_or_city = models.CharField(max_length=150, blank=False, null=True)
+    state = models.CharField(max_length=150, blank=False, null=True)
+    postcode = models.CharField(max_length=10, blank=False, null=True)
     country = models.ForeignKey(
         ShippingDestination, on_delete=models.PROTECT, null=True)
     date_ordered = models.DateField(default=datetime.date.today, null=True)
