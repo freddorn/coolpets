@@ -1,8 +1,6 @@
 console.log("Sanity check!");
 
-const s_pub = ('STRIPE_PUBLISHABLE');
-
-
+const s_pub = returnStripePublishableKey();
 
 let stripe = Stripe(s_pub);
 let elements = stripe.elements();
