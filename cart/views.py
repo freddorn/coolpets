@@ -3,21 +3,22 @@ import stripe
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.forms import formset_factory
-from django.conf import settings
 from products.models import Product
 from .forms import OrderItemForm, NewOrderForm
 from .models import Order, OrderItem, ShippingDestination
+from django.conf import settings
 
 stripe.api_key = settings.STRIPE_SECRET
-STRIPE_PUBLISHABLE = settings.STRIPE_PUBLISHABLE
-STRIPE_SUCCESS_URL = settings.STRIPE_SUCCESS_URL
-STRIPE_CANCEL_URL = settings.STRIPE_CANCEL_URL
 
-
+# Create your views here.
 @login_required
 def cart_view(request, *args, **kwargs):
-
+    """
+    render shopping cart page, remove footer from this page
+    to fit conventions of other eCommerce sites
+    """
     if request.session.get('cart'):
         cart = request.session.get('cart')
         context = get_cart_page_context(cart)
@@ -66,9 +67,11 @@ def cart_view(request, *args, **kwargs):
 
 @login_required
 def checkout_info_view(request, *args, **kwargs):
+    """
+    Renders checkout info page with navbar and footer removed
+    """
 
-    # If user trying to navigate to this page with nothing in their cart
-    # redirect them to cart page
+    # If user trying to navigate to this page with nothing in their cart, redirect them to cart page
     # that shows message "You have nothing in your cart yet."
     if not request.session.get('cart'):
         return redirect('cart')
@@ -81,6 +84,7 @@ def checkout_info_view(request, *args, **kwargs):
         order = Order.objects.filter(customer=request.user, paid=False).first()
 
         if request.method == 'POST':
+
             order_form = NewOrderForm(request.POST)
 
             if order_form.is_valid():
@@ -100,7 +104,7 @@ def checkout_info_view(request, *args, **kwargs):
 
             return redirect('shipping')
 
-        # Get data for shipping info already in order:
+    # Get data for shipping info already in order:
         initial_data = {
             'full_name': order.full_name,
             'address_line_1': order.address_line_1,
@@ -111,23 +115,56 @@ def checkout_info_view(request, *args, **kwargs):
             'country': order.country,
         }
 
-        shipping_info_form = NewOrderForm(initial=initial_data)
+    shipping_info_form = NewOrderForm(initial=initial_data)
 
-        new_context = {
-            **context,
-            **{
-                "active_pg": "checkout_info",
-                "shipping_info_form": shipping_info_form,
-                "navbar": False
-            }
+    new_context = {
+        **context,
+        **{
+            "active_pg": "checkout_info",
+            "shipping_info_form": shipping_info_form,
+            "navbar": False
         }
+    }
 
-        return render(request, "checkout_info.html", new_context)
+    return render(request, "checkout_info.html", new_context)
 
 
 @login_required
 def checkout_shipping_view(request, *args, **kwargs):
+    """
+    Renders checkout shipping page with navbar and footer removed
+    """
+    if not request.session.get('cart'):
+        return redirect('cart')
 
+    else:
+        cart = request.session.get('cart')
+        context = get_cart_page_context(cart)
+
+        # get unpaid order for this user
+        order = Order.objects.filter(customer=request.user, paid=False).first()
+
+        if request.method == 'POST':
+            return redirect('payment')
+
+        new_context = {
+            **context,
+            **{
+                "active_pg": "checkout_shipping",
+                "navbar": False,
+                "order": order,
+                "user": request.user,
+                'publishable': settings.STRIPE_PUBLISHABLE
+            }
+        }
+        return render(request, "checkout_shipping.html", new_context)
+
+
+@login_required
+def checkout_payment_view(request, *args, **kwargs):
+    """
+    Renders checkout payment page with navbar and footer removed
+    """
     if not request.session.get('cart'):
         return redirect('cart')
 
@@ -163,13 +200,13 @@ def checkout_shipping_view(request, *args, **kwargs):
         }
 
         line_items.append(shipping_item)
+        print(line_items)
 
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=line_items,
-            mode='payment',
-            success_url=STRIPE_SUCCESS_URL,
-            cancel_url=STRIPE_CANCEL_URL,
+            success_url='https://127.0.0.1:8000/cart/checkout/confirm/{CHECKOUT_SESSION_ID}',
+            cancel_url='https://127.0.0.1:8000/all-products/',
         )
 
         stripe_session_id = session.id
@@ -177,46 +214,27 @@ def checkout_shipping_view(request, *args, **kwargs):
         new_context = {
             **context,
             **{
-                "active_pg": "checkout_shipping",
+                "active_pg": "checkout_payment",
                 "navbar": False,
                 "order": order,
                 "user": request.user,
-                "stripe_session_id": stripe_session_id,
-                "publishable": STRIPE_PUBLISHABLE
+                "stripe_session_id": stripe_session_id
             }
         }
-        return render(request, "checkout_shipping.html", new_context)
+        return render(request, "checkout_payment.html", new_context)
 
 
 @login_required
 def checkout_confirm_view(request, *args, **kwargs):
-
-    if not request.session.get('cart'):
-        return redirect('cart')
-
-    else:
-        order = Order.objects.filter(customer=request.user, paid=False).first()
-
-        # Update order in database to paid
-        order.paid = True
-        order.save()
-
-        order_items = OrderItem.objects.filter(order=order)
-        for item in order_items:
-            product = Product.objects.filter(id=item.product.id).first()
-            product.num_in_stock = product.num_in_stock - item.quantity
-            product.save()
-
-        # delete session data so cart is empty
-        del request.session['cart']
-
-        context = {
-            "footer": False,
-            "navbar": False,
-            "active_pg": "checkout_confirm",
-            "order": order,
-        }
-        return render(request, "checkout_confirm.html", context)
+    """
+    Renders payment conformation page with navbar and footer removed
+    """
+    context = {
+        "footer": False,
+        "navbar": False,
+        "active_pg": "checkout_confirm"
+    }
+    return render(request, "checkout_confirm.html", context)
 
 
 # HELPER FUNCTIONS
@@ -235,10 +253,12 @@ def create_order_items(order, checkout_cart):
     for orderitem in items_in_order:
         orderitem.delete()
 
+    # loop through all cart items and create new instances of OrderItem for them
     for item in session_cart:
         _id = int(item['listingId'])
         quantity = int(item['quantity'])
 
+        # filter out items in session storage that have had their quantities reduced to 0
         if quantity > 0:
             product = Product.objects.filter(id=_id).first()
             order_item = OrderItem(
@@ -271,6 +291,7 @@ def process_delete_request(request, post_request, cart):
 
 def process_changed_input_request(request, post_request, cart):
 
+    print(cart)
     cart_items = get_cart_items(cart)
     # get item from cart items that was changed by user
     input_id = post_request['idChangedInput']
@@ -284,8 +305,7 @@ def process_changed_input_request(request, post_request, cart):
     # get quantity user requested
     value = int(post_request['value'])
 
-    # set quantity value by comparing number
-    # requested with maximum number in stock
+    # set quantity value by comparing number requested with maximum number in stock
     quantity = value if value <= max_num else int(max_num)
 
     cart['orderItems'][int(input_id)]['quantity'] = quantity
@@ -332,8 +352,7 @@ def get_cart_items(cart):
         product = get_object_or_404(Product, id=_id)
         stock_arr = [x for x in range(product.num_in_stock)]
         cart_items.append(
-            {'product': product, 'quantity': item['quantity'],
-             'stock_arr': stock_arr})
+            {'product': product, 'quantity': item['quantity'], 'stock_arr': stock_arr})
     return cart_items
 
 
