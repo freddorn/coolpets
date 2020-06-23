@@ -1,8 +1,4 @@
-console.log("Sanity check!");
-
-const s_pub = returnStripePublishableKey();
-
-let stripe = Stripe(s_pub);
+let stripe = Stripe('pk_test_51GuVA5FOlkXgVXOiO3haRU5VThlZ8dffF7Y0FozO0CfcuHAmioAdWN94aD23lAty2ngGRWaXkQritCTQ2Gs90Buf001V26dYWz');
 let elements = stripe.elements();
 
 $('#submit-payment-btn').click(function () {
@@ -18,6 +14,6 @@ async function startCheckout() {
     });
 
     if (error) {
-        alert('Something went wrong with your payment, please try again.');
+        alert('Something went wrong with the payment, please try again.');
     }
 }
