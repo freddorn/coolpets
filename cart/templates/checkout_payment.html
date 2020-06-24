@@ -42,7 +42,7 @@
 
             <h6 class="checkout-heading mt-4">Payment</h6>
             <p>All transactions are secure and encrypted</p>
-            <form action="{% url 'confirm' %}" method="POST" id="payment-form">
+            <form action="{% url 'confirm' %}" method="POST" id="payment-form" data-token="{{ publishable }}">
                     {% csrf_token %}
                 <div class="my-3">
                     <label for="card-element">
@@ -58,6 +58,7 @@
         
                 <button id="pay-now-btn"
             class="btn btn-cta btn-blue d-block mx-auto m-lg-0 ml-lg-auto mr-0 mt-3" >Submit Payment</button>
+            <a href="{% url 'shipping' %}" >Cancel</a>
             </form>
 
         </div>

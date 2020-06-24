@@ -120,8 +120,8 @@ $(document).ready(function () {
 
         Swal.fire({
             type: 'info',
-            title: "Sorry you couldn't find your country in the list.",
-            text: "Please get in touch to request your country is added my shipping destinations",
+            title: "If you have any questions?",
+            text: "Please contact us and we will assist you.",
             showCancelButton: true,
             cancelButtonText: 'Close',
             confirmButtonText: 'Contact',
