@@ -52,26 +52,22 @@
 	<!-- scripts for SweetAlert2 -->
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-	<!-- scripts for stripe -->
 	<script src="https://js.stripe.com/v3/"></script>
 
-	<!-- custom js -->
+    <!-- custom js -->
 	<script src="{% static 'js/main.js' %}"></script>
 	<script src="{% static 'js/cookie.js' %}"></script>
+
+	<script src="{% static 'js/stripe.js' %}"></script>
 
 	{% if stock_arr or cart_items %}
 	<script src="{% static 'js/requests.js' %}"></script>
 	{% endif %}
 
-	{% if stripe_session_id %}
-	<script type="text/javascript">
-		const s_id = 'stripe_session_id';
-	</script>
-	{% endif %}
-	<script src="{% static 'js/stripe.js' %}"></script>
 	{% if page == "contact" %}
 	<script src="{% static 'js/emailjs.js' %}"></script>
 	{% endif %}
+
 </body>
 
 </html>
