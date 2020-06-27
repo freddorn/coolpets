@@ -202,15 +202,6 @@ def checkout_payment_view(request, *args, **kwargs):
         line_items.append(shipping_item)
         print(line_items)
 
-        session = stripe.checkout.Session.create(
-            payment_method_types=['card'],
-            line_items=line_items,
-            success_url='https://127.0.0.1:8000/cart/checkout/confirm/{CHECKOUT_SESSION_ID}',
-            cancel_url='https://127.0.0.1:8000/all-products/',
-        )
-
-        stripe_session_id = session.id
-
         new_context = {
             **context,
             **{
@@ -218,7 +209,6 @@ def checkout_payment_view(request, *args, **kwargs):
                 "navbar": False,
                 "order": order,
                 "user": request.user,
-                "stripe_session_id": stripe_session_id
             }
         }
         return render(request, "checkout_payment.html", new_context)
