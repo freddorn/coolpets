@@ -11,6 +11,9 @@ from .models import Order, OrderItem, ShippingDestination
 from django.conf import settings
 
 stripe.api_key = settings.STRIPE_SECRET
+STRIPE_PUBLISHABLE = settings.STRIPE_PUBLISHABLE
+STRIPE_SUCCESS_URL = settings.STRIPE_SUCCESS_URL
+STRIPE_CANCEL_URL = settings.STRIPE_CANCEL_URL
 
 # Create your views here.
 @login_required
@@ -154,7 +157,6 @@ def checkout_shipping_view(request, *args, **kwargs):
                 "navbar": False,
                 "order": order,
                 "user": request.user,
-                'publishable': settings.STRIPE_PUBLISHABLE
             }
         }
         return render(request, "checkout_shipping.html", new_context)
@@ -200,7 +202,18 @@ def checkout_payment_view(request, *args, **kwargs):
         }
 
         line_items.append(shipping_item)
-        print(line_items)
+
+        if request.method == 'POST':
+            token = request.POST.get('stripeToken', False)
+            if token:
+                try:
+                    order = stripe.Charge.create(
+                        amount=999,
+                        currency='usd',
+                        source=token,
+                    )
+                except stripe.error.CardError:
+                    messages.error(request, "Your card was declined!")
 
         new_context = {
             **context,
@@ -209,6 +222,7 @@ def checkout_payment_view(request, *args, **kwargs):
                 "navbar": False,
                 "order": order,
                 "user": request.user,
+                "publishable": STRIPE_PUBLISHABLE,
             }
         }
         return render(request, "checkout_payment.html", new_context)
