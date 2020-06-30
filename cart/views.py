@@ -208,7 +208,7 @@ def checkout_payment_view(request, *args, **kwargs):
             if token:
                 try:
                     order = stripe.Charge.create(
-                        amount=999,
+                        amount=100*'line_items',
                         currency='usd',
                         source=token,
                     )
