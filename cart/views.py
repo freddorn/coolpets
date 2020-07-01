@@ -203,18 +203,6 @@ def checkout_payment_view(request, *args, **kwargs):
 
         line_items.append(shipping_item)
 
-        if request.method == 'POST':
-            token = request.POST.get('stripeToken', False)
-            if token:
-                try:
-                    order = stripe.Charge.create(
-                        amount=100*'line_items',
-                        currency='usd',
-                        source=token,
-                    )
-                except stripe.error.CardError:
-                    messages.error(request, "Your card was declined!")
-
         new_context = {
             **context,
             **{
