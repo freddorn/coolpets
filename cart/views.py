@@ -3,7 +3,6 @@ import stripe
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.forms import formset_factory
 from products.models import Product
 from .forms import OrderItemForm, NewOrderForm
@@ -15,12 +14,11 @@ STRIPE_PUBLISHABLE = settings.STRIPE_PUBLISHABLE
 STRIPE_SUCCESS_URL = settings.STRIPE_SUCCESS_URL
 STRIPE_CANCEL_URL = settings.STRIPE_CANCEL_URL
 
-# Create your views here.
+
 @login_required
 def cart_view(request, *args, **kwargs):
     """
-    render shopping cart page, remove footer from this page
-    to fit conventions of other eCommerce sites
+    Render shopping cart page, remove footer from this page
     """
     if request.session.get('cart'):
         cart = request.session.get('cart')
@@ -203,6 +201,16 @@ def checkout_payment_view(request, *args, **kwargs):
 
         line_items.append(shipping_item)
 
+        session = stripe.checkout.Session.create(
+            payment_method_types=['card'],
+            mode="payment",
+            line_items=line_items,
+            success_url='http://127.0.0.1:8000/cart/checkout/confirm/{CHECKOUT_SESSION_ID}',
+            cancel_url='http://127.0.0.1:8000/all-products/',
+        )
+
+        stripe_session_id = session.id
+
         new_context = {
             **context,
             **{
@@ -210,6 +218,7 @@ def checkout_payment_view(request, *args, **kwargs):
                 "navbar": False,
                 "order": order,
                 "user": request.user,
+                "stripe_session_id": stripe_session_id,
                 "publishable": STRIPE_PUBLISHABLE,
             }
         }
@@ -239,8 +248,6 @@ def checkout_confirm_view(request, *args, **kwargs):
         del request.session['cart']
 
     context = {
-        "footer": False,
-        "navbar": False,
         "active_pg": "checkout_confirm",
         "order": order,
 
