@@ -32,6 +32,16 @@
                     {{ order.postcode }},<br>
                     {{ order.country }}</p>
 				</div>
+				<!-- order summary section, hidden on medium screens and up -->
+				<div class="d-none d-md-block col-md-6">
+					<div class="row" id="shopping-cart-contents">
+						<div class="col-9">
+							<h3 class="checkout-heading pb-3 px-3">Your order summary</h3>
+						</div>
+						<div class="col-3 text-right"><a href="{% url 'cart' %}">Change</a></div>
+						{% include 'components/orderitem-list.html' %}
+					</div>
+				</div>
 
 
 				<p>You can review your order on your <a href="{% url 'profile'%}">Account page</a></p>
