@@ -6,11 +6,10 @@
 		<img id="logo" src="{% static 'images/logo.png' %}" alt="Dog logo">
     </a>
 
-		<!-- positions favs and cart icons to left of toggler on mobiles (2nd one for desktop below) -->
 		<div id="navbar-icons-mobile" class="d-lg-none">
 			<a class="nav-link nav-link-icon" href="{% url 'cart' %}" title="Shopping cart">
 				<div>
-					<i class="fas fa-shopping-basket navbar-icon"></i>
+					<i class="fas fa-shopping-cart"></i>
 					{% if request.session.cart.count and request.session.cart.count != 0 %}
 					<div id="cart-counter">{% if request.session.cart.count > 9 %}9+
 						{% else %}{{ request.session.cart.count }}{% endif %}</div>
@@ -89,7 +88,7 @@
 			<a class="nav-link nav-link-icon" href="{% url 'cart' %}" title="Shopping cart"
 				aria-label="View shopping cart">
 				<div>
-					<i class="fas fa-shopping-basket navbar-icon"></i>
+					<i class="fas fa-shopping-cart"></i>
 					{% if request.session.cart.count and request.session.cart.count != 0 %}
 					<div class="cart-counter">{% if request.session.cart.count > 9 %}9+
 						{% else %}{{ request.session.cart.count }}{% endif %}</div>
