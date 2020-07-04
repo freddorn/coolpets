@@ -9,7 +9,7 @@
 		<div id="navbar-icons-mobile" class="d-lg-none">
 			<a class="nav-link nav-link-icon" href="{% url 'cart' %}" title="Shopping cart">
 				<div>
-					<i class="fas fa-shopping-cart"></i>
+					<i class="fas fa-shopping-cart navbar-icon"></i>
 					{% if request.session.cart.count and request.session.cart.count != 0 %}
 					<div id="cart-counter">{% if request.session.cart.count > 9 %}9+
 						{% else %}{{ request.session.cart.count }}{% endif %}</div>
@@ -88,7 +88,7 @@
 			<a class="nav-link nav-link-icon" href="{% url 'cart' %}" title="Shopping cart"
 				aria-label="View shopping cart">
 				<div>
-					<i class="fas fa-shopping-cart"></i>
+					<i class="fas fa-shopping-cart navbar-icon"></i>
 					{% if request.session.cart.count and request.session.cart.count != 0 %}
 					<div class="cart-counter">{% if request.session.cart.count > 9 %}9+
 						{% else %}{{ request.session.cart.count }}{% endif %}</div>
