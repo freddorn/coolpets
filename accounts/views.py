@@ -15,7 +15,8 @@ def register_view(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Your account has been created {username}. You can now log in.')
+            messages.success(request,
+                             f'Your account has been created {username}. You can now log in.')
             return redirect('login')
     else:
         form = UserRegisterForm()
@@ -38,7 +39,8 @@ def profile_view(request):
     else:
         form = UserUpdateForm(instance=request.user)
 
-    orders = Order.objects.filter(customer=request.user, paid=True).order_by('-date_ordered')
+    orders = Order.objects.filter(
+        customer=request.user, paid=True).order_by('-date_ordered')
 
     all_orders = []
 
@@ -49,7 +51,8 @@ def profile_view(request):
         for order_item in order_items_db:
             order_items.append(order_item)
             order_total += int(order_item.product.price * order_item.quantity)
-        all_orders.append({'order': order, 'order_items': order_items, "total": order_total})
+        all_orders.append(
+            {'order': order, 'order_items': order_items, "total": order_total})
 
     context = {
         'form': form,

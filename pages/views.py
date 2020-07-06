@@ -6,7 +6,8 @@ from .forms import ContactForm
 
 # Create your views here.
 def home_view(request, *args, **kwargs):
-    """ Renders home page with 6 random featured products in featured listing section """
+    """ Renders home page with 6 random
+    featured products in featured listing section """
 
     featured_products = Product.objects.filter(featured=True).order_by('?')[:6]
     context = {
@@ -23,7 +24,8 @@ def about_view(request, *args, **kwargs):
 
 def contact_view(request, *args, **kwargs):
     """
-    Renders contact form on contact page with any relevant information the user has
+    Renders contact form on contact page
+    with any relevant information the user has
     already provided in the name and email fields.
     """
 

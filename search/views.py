@@ -7,10 +7,6 @@ from products.models import Product
 
 
 def search_view(request, *args, **kwargs):
-    """
-    View for search page. If search query entered view takes query and filters results from Product model input and provides the list for
-    display on the page.
-    """
 
     context = {
         'category': 'Search',

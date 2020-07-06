@@ -3,7 +3,8 @@ from .models import Order, OrderItem
 
 
 class OrderItemForm(forms.ModelForm):
-    """ form for cart view, so the user can update quantity of product they want to order. """
+    """ form for cart view, so the user can
+     update quantity of product they want to order. """
     quantity = forms.IntegerField(
         min_value=0,
         max_value=10
@@ -18,7 +19,8 @@ class OrderItemForm(forms.ModelForm):
 
 class NewOrderForm(forms.ModelForm):
 
-    """ Form to collect shipping information for order on checkout_info page """
+    """ Form to collect shipping information
+     for order on checkout_info page """
     class Meta:
         model = Order
         fields = [

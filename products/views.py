@@ -29,32 +29,37 @@ class ListingDetailView(DetailView):
         return instance
 
     def post(self, request, *args, **kwargs):
-        """ Processes fetch request and adds shopping cart data to session storage """
+
         form = json.loads(request.body)
         _id = self.kwargs.get('pk')
         instance = get_object_or_404(Product, id=_id)
 
-        # checks if orderItems already exists in session storage, and creates it if needed.
+        # checks if orderItems already exists in session storage,
+        # and creates it if needed.
         cart = request.session.get(
             'cart', {'orderItems': [], 'total': 0, 'count': 0})
 
         item_already_in_cart = False
         too_many = False
 
-        # if cart already exists, check if selected item is already in cart orderItems
+        # if cart already exists, check if selected item
+        # is already in cart orderItems
         if len(cart['orderItems']) != 0:
             for item in cart['orderItems']:
                 listingId = item.get("listingId")
 
-                # if listing is already in cart set to true, check num in stock against num requested by user
+                # if listing is already in cart set to true,
+                # check num in stock against num requested by user
                 if listingId == _id:
                     item_already_in_cart = True
                     num_in_stock = instance.num_in_stock
                     quantity_total = int(
                         item['quantity']) + int(form['quantity'])
 
-                    # if quantity requested is more than is in stock set quantity
-                    # of item to number in stock and send response to js to alert user
+                    # if quantity requested is more than
+                    # is in stock set quantity
+                    # of item to number in stock and send
+                    # response to js to alert user
                     if quantity_total > num_in_stock:
                         diff = quantity_total - num_in_stock
                         item['quantity'] = int(num_in_stock)
@@ -76,7 +81,8 @@ class ListingDetailView(DetailView):
         if not too_many:
             cart['count'] = cart['count'] + int(form['quantity'])
             cart['total'] = round(
-                cart['total'] + float(Decimal(instance.price) * Decimal(form['quantity'])))
+                cart['total'] + float(Decimal(instance.price)
+                                      * Decimal(form['quantity'])))
 
         # set values for count and total based on the number of items
         # in stock rather than number of items user requested
@@ -84,7 +90,8 @@ class ListingDetailView(DetailView):
             quantity_to_add = int(form['quantity']) - diff
             cart['count'] = cart['count'] + quantity_to_add
             cart['total'] = round(
-                cart['total'] + float(Decimal(instance.price) * quantity_to_add))
+                cart['total'] + float(Decimal(instance.price)
+                                      * quantity_to_add))
 
         request.session['cart'] = cart
 
@@ -104,10 +111,7 @@ def categories_view(request, *args, **kwargs):
 
 
 class ProductMixin(ListView):
-    """
-    Mixin to build common data needed for "All products" pages on site, allows for
-    pagination of all products when sorted by price or featured.
-    """
+
     model = Product
     template_name = 'results.html'
     queryset = Product.objects.all().order_by('-id')
@@ -128,7 +132,8 @@ class ProductMixin(ListView):
 class AllProductsView(ProductMixin):
     """
     Inherits from custom built ProductMixin,
-    collects context data need for this specific page to render all products page.
+    collects context data need for this specific
+    page to render all products page.
     with Products with featured=True first.
     """
 
@@ -148,7 +153,8 @@ class AllProductsView(ProductMixin):
 class AllProductsPriceHighView(ProductMixin):
     """
     Inherits from custom built ProductMixin,
-    collects context data need for this specific page to render all products page
+    collects context data need for this specific
+    page to render all products page
     with highest priced listings first.
     """
     ordering = ['-price']

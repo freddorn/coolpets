@@ -72,7 +72,8 @@ def checkout_info_view(request, *args, **kwargs):
     Renders checkout info page with navbar and footer removed
     """
 
-    # If user trying to navigate to this page with nothing in their cart, redirect them to cart page
+    # If user trying to navigate to this page with nothing
+    # in their cart, redirect them to cart page
     # that shows message "You have nothing in your cart yet."
     if not request.session.get('cart'):
         return redirect('cart')
@@ -271,12 +272,14 @@ def create_order_items(order, checkout_cart):
     for orderitem in items_in_order:
         orderitem.delete()
 
-    # loop through all cart items and create new instances of OrderItem for them
+    # loop through all cart items and create
+    # new instances of OrderItem for them
     for item in session_cart:
         _id = int(item['listingId'])
         quantity = int(item['quantity'])
 
-        # filter out items in session storage that have had their quantities reduced to 0
+        # filter out items in session storage that have
+        # had their quantities reduced to 0
         if quantity > 0:
             product = Product.objects.filter(id=_id).first()
             order_item = OrderItem(
@@ -323,7 +326,8 @@ def process_changed_input_request(request, post_request, cart):
     # get quantity user requested
     value = int(post_request['value'])
 
-    # set quantity value by comparing number requested with maximum number in stock
+    # set quantity value by comparing number
+    # requested with maximum number in stock
     quantity = value if value <= max_num else int(max_num)
 
     cart['orderItems'][int(input_id)]['quantity'] = quantity
@@ -370,7 +374,8 @@ def get_cart_items(cart):
         product = get_object_or_404(Product, id=_id)
         stock_arr = [x for x in range(product.num_in_stock)]
         cart_items.append(
-            {'product': product, 'quantity': item['quantity'], 'stock_arr': stock_arr})
+            {'product': product, 'quantity': item['quantity'],
+             'stock_arr': stock_arr})
     return cart_items
 
 
