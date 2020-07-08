@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
-import django_heroku
-django_heroku.settings(locals(), test_runner=False)
+
+if 'DEV' not in os.environ:
+    import django_heroku
+    django_heroku.settings(locals())
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
