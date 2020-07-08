@@ -180,4 +180,4 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 if 'DEV' not in os.environ:
     import django_heroku
-    django_heroku.settings(locals(), test_runner=False)
+    django_heroku.settings(locals())
