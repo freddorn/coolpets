@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 
 
 class ShippingDestination(models.Model):
-    """ Model to store all shipping destinations 
+    """ Model to store all shipping destinations
     with their relevant price and shipping time """
 
     country = models.CharField(max_length=50)
