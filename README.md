@@ -1,7 +1,5 @@
 [![Build Status](https://travis-ci.org/freddorn/coolpets.svg?branch=master)](https://travis-ci.org/freddorn/coolpets)
 
-# Cool Pets
-
 #   [Coolpets](https://coolpets.herokuapp.com/)
 
 Welcome to Cool Pets, your number one source for all things pet related.
@@ -75,14 +73,14 @@ our passion into offering our pet supplies to you, on our website.
 
 ### Content
 
-- The text and descriptions of the merchandise, were obtained from [Amazon](https://www.amazon.com/ and [Chewy](https://www.chewy.com/)
+- The text and descriptions of the merchandise, were obtained from [Amazon](https://www.amazon.com/) and [Chewy](https://www.chewy.com/)
 
 
 ### Media
 
 - The image of the three dogs on the Main page was taken by myself.
 - The images on the About and Contact pages, were obtained from [Pxhere](https://pxhere.com/en/)
-- All category and product images, were obtained from [Amazon](https://www.amazon.com/ and [Chewy](https://www.chewy.com/)
+- All category and product images, were obtained from [Amazon](https://www.amazon.com/) and [Chewy](https://www.chewy.com/)
 
 
 
