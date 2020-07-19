@@ -1,83 +1,95 @@
 [![Build Status](https://travis-ci.org/freddorn/coolpets.svg?branch=master)](https://travis-ci.org/freddorn/coolpets)
 
-# Your Project's Name
+# Cool Pets
 
-One or two paragraphs providing an overview of your project.
+#   [Coolpets](https://coolpets.herokuapp.com/)
 
-Essentially, this part is your sales pitch.
+Welcome to Cool Pets, your number one source for all things pet related.
+We're dedicated to giving you the very best pet products, with a focus on dogs.
+We now serve customers all across the USA and are thrilled that we're able to turn
+our passion into offering our pet supplies to you, on our website. 
+
+
+---
+ 
+## Table of Contents
+1. [**UX**](#ux)
+    - [**User Stories**](#user-stories)
+    - [**Design**](#design)
+        - [**Framework**](#framework)
+        - [**Color Scheme**](#color-scheme)
+        - [**Typography**](#typography)
+    - [**Wireframes**](#wireframes)
+
+2. [**Features**](#features)
+    - [**Existing Features**](#existing-features)
+    - [**Features Left to Implement**](#features-left-to-implement)
+
+3. [**Technologies Used**](#technologies-used)
+
+4. [**Testing**](#testing)
+    - [**Automated Testing**](#automated-testing)
+    - [**Manual Testing**](#manual-testing)
+    - [**Validators**](#validators)
+    - [**Compatibility**](#compatibility)
+
+5. [**Deployment**](#deployment)
+    - [**Local Deployment**](#local-deployment)
+    - [**Remote Deployment**](#remote-deployment)
+
+6. [**Credits**](#credits)
+    - [**Content**](#content)
+    - [**Media**](#media)
+    - [**Acknowledgements**](#acknowledgements)
+
+---
  
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
-
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+
  
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
-- Another feature idea
+
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
-- [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
 
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
 
 
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+
+- The text and descriptions of the merchandise, were obtained from [Amazon](https://www.amazon.com/ and [Chewy](https://www.chewy.com/)
+
 
 ### Media
-- The photos used in this site were obtained from ...
+
+- The image of the three dogs on the Main page was taken by myself.
+- The images on the About and Contact pages, were obtained from [Pxhere](https://pxhere.com/en/)
+- All category and product images, were obtained from [Amazon](https://www.amazon.com/ and [Chewy](https://www.chewy.com/)
+
+
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from [Chewy](https://www.chewy.com/)
+- The Slack community, where I have learned a great deal, reading through many posts.
+- My mentor Sebastian Immel.
+- W3SCHOOLS website for easy explanation of the code.
+- Stack Overflow, a good source of knowledge.
