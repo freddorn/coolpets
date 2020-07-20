@@ -86,7 +86,7 @@ our passion into offering our pet supplies to you, on our website.
 
 ### Acknowledgements
 
-- I received inspiration for this project from [Chewy](https://www.chewy.com/)
+- I received inspiration for this project from [Chewy](https://www.chewy.com/) pet supplies.
 - The Slack community, where I have learned a great deal, reading through many posts.
 - My mentor Sebastian Immel.
 - W3SCHOOLS website for easy explanation of the code.
