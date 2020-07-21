@@ -43,6 +43,64 @@ our passion into offering our pet supplies to you, on our website.
 ---
  
 ## UX
+
+
+### User Stories
+
+As a user, I want to be able to _____________:
+
+- Create an account
+- Log into the site
+- Log out of the site
+- Have a profile page
+- Edit and update my profile information on my profile page
+- To find the product I am looking for, easily
+- Have information given to me that is presented easily to navigate and absorb
+- Have the ability to search for the products I am interested in
+- Have the website being easy to navigate on any device
+- Learn about the business and what they offer
+- View the full details of my purchase
+- View images of the product, I am considering purchasing
+- Know the stock level of an item, I am considering purchasing
+- See a summary of my order, on each page of the checkout process
+- Be able to look up information on past orders
+- Request cancellation on an order that hasn't been processed yet
+- Be charged securely for my purchase
+- See the checkout progress of my purchase
+- Be able to contact the company via a contact form
+- Have feedback from the website to inform me when my forms have been entered correctly, or to inform me of an error and how to correct it
+
+
+### Design
+
+The design of the site is based on standard Materialize elements, with their colouring altered to be bright and colorful. Bug Reports and Feature Requests are displayed as cards, showing a brief summary of the ticket along with information on how many views and favourites that each has.
+
+#### Framework
+
+Frameworks used in the project are:
+
+- [BootstrapCDN](https://www.bootstrapcdn.com/)
+    - Used to simplify the building of a responsive website.
+- [Django](https://www.djangoproject.com/)
+    - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+- [jQuery](https://jquery.com/)
+    - To simplify DOM manipulation.
+
+#### Color Scheme
+
+The site uses easy to look at, contrasting colors. A green navbar, brown footer, red icons and blue buttons of varying shades.
+
+#### Typography
+
+The Google font [Roboto](https://fonts.google.com/specimen/Roboto) has been used for titles and main headings.
+
+### Wireframes
+
+These can be found using [this link](https://github.com/freddorn/coolpets/tree/master/design/wireframes).
+
+##### back to [top](#table-of-contents)
+
+---
  
 
 
