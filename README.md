@@ -22,6 +22,7 @@ our passion into offering our pet supplies to you, on our website.
 2. [**Features**](#features)
     - [**Existing Features**](#existing-features)
     - [**Features Left to Implement**](#features-left-to-implement)
+    - [**Database**](#database)
 
 3. [**Technologies Used**](#technologies-used)
 
@@ -73,8 +74,6 @@ As a user, I want to be able to _____________:
 
 ### Design
 
-The design of the site is based on standard Materialize elements, with their colouring altered to be bright and colorful. Bug Reports and Feature Requests are displayed as cards, showing a brief summary of the ticket along with information on how many views and favourites that each has.
-
 #### Framework
 
 Frameworks used in the project are:
@@ -105,14 +104,134 @@ These can be found using [this link](https://github.com/freddorn/coolpets/tree/m
 
 
 ## Features
-
-
  
 ### Existing Features
 
+**Navbar**
+
+The options that a user will see displayed in the navbar are dependant on whether or not they are logged in.
+- Users that are not logged in will see:
+    - Home
+    - Shop
+    - About
+    - Contact
+    - Register
+    - Login
+
+- Users that are signed into the site will see:
+    - Home
+    - Shop
+    - About
+    - Contact
+    - Account
+    - Logout
+
+- The navbar also features:
+    - The Coolpets logo
+    - Search Icon
+    - Shopping Cart Icon
+      -Shopping Cart Counter
+
+- On medium and smaller screen sizes:
+    - The logo remains on the left side of the navbar
+    - The shopping cart icon and counter is in the center of the navbar
+    - A hamburger icon appears on the right side of the navbar, that contains all navigation items and the search icon
+
+**Footer**
+
+**Home Page**
+
+**Shop Page**
+
+**Search Page**
+
+**Product Listing Page**
+
+**About Page**
+
+**Contact Page**
+
+**Register Page**
+
+**Login Page**
+
+**Account Page**
+
+**Logout Page**
+
+**Cart Page**
+
+**Checkout Pages**
 
 ### Features Left to Implement
 
+**Delete Account**
+
+**Email Confirmation after placing order**
+
+**Password Reset**
+
+**Saving customer's Shipping and Payment Information**
+
+###Database
+
+**Users**
+
+The Users model used is the standard one provided by `django.contrib.auth.models`
+
+
+**Products**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Title | title | max_length=100 | CharField
+Shop category | category | choices=CATEGORY_CHOICES | CharField
+Image 1 | product_image1 |  | ImageField
+Image 2 | product_image2 | blank=True, null=True | ImageField
+Image 3 | product_image3 | blank=True, null=True | ImageField
+Image 4 | product_image4 | blank=True, null=True | ImageField
+Image 5 | product_image5 | blank=True, null=True | ImageField
+Description | description |  | TextField
+Price | price | max_digits=6, decimal_places=2 | DecimalField
+Tags | tags | max_length=300 | CharField
+Stock qty | num_in_stock | validators=[MaxValueValidator(100)] | PositiveSmallIntegerField
+Featured | featured | default=False | BooleanField
+
+**Shipping**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Country | country | max_length=50 | CharField
+Shipping Price | shipping_price | max_digits=6, decimal_places=2 | DecimalField
+Shipping Time | shipping_time | max_length=150, default="1 week" | CharField
+
+**Order**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+User | customer | on_delete=models.PROTECT | ForeignKey to User
+Full Name | full_name | max_length=150 | CharField
+Address line 1 | address_line_1 | max_length=150 | CharField
+Address line 2 | address_line_2 | max_length=150, blank=True | CharField
+Town / City | town_or_city | max_length=150 | CharField
+State | state | max_length=150, blank=True | CharField
+Postcode | postcode | max_length=10 | CharField
+Country | country | on_delete=models.PROTECT | ForeignKey to ShippingDestination
+Date ordered | date_ordered | default=datetime.date.today | DateField
+Paid | paid | default=False | BooleanField
+Shipped | shipped | default=False | BooleanField
+
+**Order Items**
+
+| Name | Key in db | Validation | Field Type |
+--- | --- | --- | ---
+Order | order | on_delete=models.CASCADE | ForeignKey to Order
+Product | product | on_delete=models.PROTECT | ForeignKey to Product
+Quantity | quantity | | PositiveSmallIntegerField
+
+##### back to [top](#table-of-contents)
+
+---
 
 ## Technologies Used
 
