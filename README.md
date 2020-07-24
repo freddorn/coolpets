@@ -138,6 +138,9 @@ The options that a user will see displayed in the navbar are dependant on whethe
     - A hamburger icon appears on the right side of the navbar, that contains all navigation items and the search icon
 
 **Footer**
+  - Product categories are listed on the left side
+  - Popular links are listed on the right side
+  - The copyright date is set with javascript to the current year
 
 **Home Page**
 
@@ -166,14 +169,13 @@ The options that a user will see displayed in the navbar are dependant on whethe
 ### Features Left to Implement
 
 **Delete Account**
-
 **Email Confirmation after placing order**
-
 **Password Reset**
-
 **Saving customer's Shipping and Payment Information**
+  - These features will be implemented at a future date, due to time constraints
 
-### Database
+
+###Database
 
 **Users**
 
@@ -232,6 +234,7 @@ Quantity | quantity | | PositiveSmallIntegerField
 ##### back to [top](#table-of-contents)
 
 ---
+
 
 ## Technologies Used
 
