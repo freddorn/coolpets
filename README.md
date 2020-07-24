@@ -168,14 +168,14 @@ The options that a user will see displayed in the navbar are dependant on whethe
 
 ### Features Left to Implement
 
-**Delete Account**
-**Email Confirmation after placing order**
-**Password Reset**
-**Saving customer's Shipping and Payment Information**
+1. Delete Account
+2. Email Confirmation after placing order
+3. Password Reset
+4. Saving customer's Shipping and Payment Information
   - These features will be implemented at a future date, due to time constraints
 
 
-###Database
+### Database
 
 **Users**
 
