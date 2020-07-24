@@ -252,6 +252,8 @@ def checkout_confirm_view(request, *args, **kwargs):
         "active_pg": "checkout_confirm",
         "order": order,
         "user": request.user,
+        "footer": False,
+        "navbar": False,
     }
     return render(request, "checkout_confirm.html", context)
 

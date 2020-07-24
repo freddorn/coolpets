@@ -87,7 +87,7 @@ Frameworks used in the project are:
 
 #### Color Scheme
 
-The site uses easy to look at, contrasting colors. A green navbar, brown footer, red icons and blue buttons of varying shades.
+The site uses easy to look at, contrasting colors. A chateau green #28a745 navbar, eclipse #373737 footer, red icons and blue buttons of varying shades.
 
 #### Typography
 
@@ -173,7 +173,7 @@ The options that a user will see displayed in the navbar are dependant on whethe
 
 **Saving customer's Shipping and Payment Information**
 
-###Database
+### Database
 
 **Users**
 
@@ -268,3 +268,5 @@ Quantity | quantity | | PositiveSmallIntegerField
 - My mentor Sebastian Immel.
 - W3SCHOOLS website for easy explanation of the code.
 - Stack Overflow, a good source of knowledge.
+- My database structure was inspired by [Anna Greaves](https://github.com/AJGreaves) from her milestone project The House of Mouse.
+  
