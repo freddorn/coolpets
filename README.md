@@ -143,28 +143,92 @@ The options that a user will see displayed in the navbar are dependant on whethe
   - The copyright date is set with javascript to the current year
 
 **Home Page**
-
-**Shop Page**
+  1. At the top of the page is an image of three dogs.
+  2. The title of the page and a brief introduction. 
+  3. A Learn More link, that leads to the About page.
+  4. Category images, where the first two are larger images and underneath those with four smaller images.
+  5. Featured Listings with four images, each from a different category.
+  6. A Browse More link, that leads to the All Products page.
+  
+**Product Page**
+  1. With the Shop links in the navbar, View All will show all products.
+  2. All categories of products are in a dropdown menu of the navbar that will show all the products of a certain category.
+  3. When viewing All Products, all links to each category are at the top of the page.
+  4. On the All Products page, there is a sorting capability to sort each listing by Featured, Price high to low, or Price low to high.
+  5. At the top of the page, are bread crumbs that show which page you are viewing.
+  6. If more than 12 listings are shown, pagination buttons will be shown at the bottom of the page.
 
 **Search Page**
+  1. Similar to the All Products page with the same category links and bread crumbs.
+  2. A search field to enter your search criteria.
+  3. All matching listings will be displayed, or a message stating that no items were found in the search.
 
 **Product Listing Page**
+  1. Has bread crumbs as the other pages have.
+  2. The title of the product is shown.
+  3. There are five images of each product, with the thumbnail images to the right of a larger image of which image is currently selected.
+  4. The price is shown, along with a dropdown menu to select your quantity and an Add To Cart button.
+  5. A description of the product.
+  6. A You Might Also Like section, shows more similiar products, that a customer could add on to the order.
+  7. A Browse More link, to the category of the product that is currently being shown.
 
 **About Page**
+  1. At the top of the page is an image of two dogs.
+  2. The name of the company and a  paragraph describing the company.
+  3. A Visit Shop link that leads to the All Products page.
 
 **Contact Page**
+  1. At the top of the page, is another image of two dogs.
+  2. A contact form for contacting the company.
+  3. The form has a field for Name, Email and Message.
 
 **Register Page**
+  1. Uses the same image, that the Account page uses.
+  2. A form with fields for username, email, password and password confirmation.
+  3. A description of which characters are accepted in creating your password.
 
 **Login Page**
+  1. Uses the same image, that the Account page uses.
+  2. A log in form of the username and password.
+  3. Form validation is used and informs the user that they are logged in, or that either the username or password are incorrect.
 
 **Account Page**
+  1. At the top of the page, is an image of three dogs.
+  2. The user's profile information is shown and can be updated.
+  3. All of the user's previous orders as well as the order's details are shown.
 
 **Logout Page**
+  1. Uses the same image, that the Account page uses.
+  2. Advises that You have successfully logged out.
+  3. Has a link to Log in again.
 
 **Cart Page**
+  1. Has the name of the product or products.
+  2. Shows the product prices and quantities.
+  3. Lists the subtotal of the order.
 
-**Checkout Pages**
+**Checkout Information Page**
+  1. The customer enters their shipping information into a form.
+  2. The price, quantity and subtotal information from the cart page is shown.
+
+**Checkout Shipping Page**
+  1. The customer's shipping information is shown.
+  2. The user selects their shipping method, which currently only has one choice.
+  3. The order summary with the total amount is shown.
+
+**Checkout Payment Page**
+  1. The customer's shipping information is shown.
+  2. The order summary with the total amount is shown.
+  3. A Continue To Payment link leads to a Stripe generated payment page.
+
+**Stripe Payment Page**
+  1. The order total amount is shown on this payment page hosted by Stripe.
+  2. All card information is entered and processed by Stripe.
+
+**Checkout Confirmation Page**
+  1. An Order Confirmed message is shown.
+  2. The customer's name and shipping information is shown.
+  3. Links are present to the Account and Contact pages.
 
 ### Features Left to Implement
 
