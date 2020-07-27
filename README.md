@@ -25,6 +25,10 @@ our passion into offering our pet supplies to you, on our website.
     - [**Database**](#database)
 
 3. [**Technologies Used**](#technologies-used)
+    - [**Languages**](#languages)
+    - [**Libraries**](#libraries)
+    - [**Databases**](#databases)
+    - [**Tools**](#tools)
 
 4. [**Testing**](#testing)
     - [**Automated Testing**](#automated-testing)
