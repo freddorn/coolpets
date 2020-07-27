@@ -302,7 +302,41 @@ Quantity | quantity | | PositiveSmallIntegerField
 
 ## Technologies Used
 
+### Languages
+* HTML 
+* CSS 
+* Javascript
+* Python
 
+### Libraries
+- [Bootstrap](https://www.bootstrapcdn.com/) Simplifies the website structure and easily makes it responsive.
+- [JQuery](https://jquery.com) Simpifies DOM manipulation.
+- [Google Fonts](https://fonts.google.com/) Styling the website fonts.
+- [FontAwesome](https://www.bootstrapcdn.com/fontawesome/) Provides icons for the website.
+
+### Databases
+- [PostgreSQL](https://www.postgresql.org/) for production database, provided by heroku.
+- [SQlite3](https://www.sqlite.org/index.html) for development database, provided by django.
+
+### Tools
+- [Gitpod](https://https://www.gitpod.io/) IDE used to develop the project. 
+- [Django](https://www.djangoproject.com/) Python web framework.
+- [Stripe](https://stripe.com) Platform for accepting secure payments.
+- [Travis](https://travis-ci.org/) Continuous Integration testing.
+- [AWS S3](https://aws.amazon.com/) Storage for the profuct images in the database.
+- [Whitenoise](http://whitenoise.evans.io/en/stable/) Allows the web app to serve its own static files.
+- [Obfuscator](https://obfuscator.io/) Used to conceal the stripe public key.
+- [Imgbb](https://imgbb.com) Storage for static page images.
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03) For handling version control.
+- [GitHub](https://github.com/) For remotely storing and sharing project code.
+- [Heroku](https://www.heroku.com/) Was used to deploy the project.
+- [Email JS](https://www.emailjs.com/) Send email directly from your client-side Javascript code without server-side code.
+ 
+
+
+##### back to [top](#table-of-contents)
+
+---
 
 
 ## Testing
@@ -311,6 +345,67 @@ Quantity | quantity | | PositiveSmallIntegerField
 
 ## Deployment
 
+### Local Deployment
+
+Before you are able to deploy and run this application locally, you must have the following installed on your system:
+
+- [Python3](https://www.python.org/downloads) to run the application.
+- [PIP](https://pip.pypa.io/en/stable/installing) to install all app requirements.
+- An IDE of your choice, such as [Gitpod](https://https://www.gitpod.io/).
+- [GIT](https://www.atlassian.com/git/tutorials/install-git) for cloning and version control.
+
+Also it would be beneficial to have free accounts set up for the following services:
+- AWS S3
+- Stripe
+- Emailjs
+
+Next, perform the following steps:
+
+Clone this GitHub repository by either clicking the green *Clone or download* button and downloading the project as a zip-file (remember to unzip it first), or by entering the following into the Git CLI terminal:
+    - `git clone https://github.com/freddorn/coolpets.git`.
+- Navigate to the correct file location after unpacking the files.
+    - `cd <path to folder>`
+- Create a `.env` file containing the following environmental variables:
+    - ***STRIPE_PUBLISHABLE*** - Used solely to identify your account with Stripe; it isn't secret.
+    - ***STRIPE_SECRET*** -  Can perform any API request to Stripe without restriction.
+    - ***STRIPE_CANCEL_URL***
+    - ***STRIPE_SUCCESS_URL***
+    - ***SECRET_KEY*** - Standard secret key, any value.
+    - ***HOSTNAME***
+    - ***AWS_ACCESS_KEY_ID*** - AWS user credentials.
+    - ***AWS_SECRET_ACCESS_KEY*** - AWS S3 credentials.
+    - ***AWS_STORAGE_BUCKET_NAME***
+    - ***DATABASE_URL*** - Remote PostgreSQL database link if using a remote database.
+
+
+
+- Install all requirements from the requirements.txt file using this command:
+    - `pip3 install -r requirements.txt`
+
+- At the terminal prompt, type ```python3 manage.py runserver```. Django should now start running a development server from 'http://127.0.0.1:8000'. 
+
+    Running the project for the first time will cause Django to create a SQLite3 database named ```db.sqlite3```. Type the following command into the terminal to create the database schema:
+    - `python3 manage.py migrate`
+
+    Django will then migrate the files contained in the migrations folder to create a database schema.
+
+
+### Remote Deployment
+
+To implement this project on Heroku, the following must be completed:
+
+1. Create the **requirements.txt** file so Heroku knows what dependencies are needed, with the command `pip3 freeze > requirements.txt`
+2. Create a **Procfile** to tell Heroku what type of application is being deployed, and how to run it.
+3. Sign up for or log into your Heroku account, create your project app, and click the **Deploy** tab. Select *Connect GitHub* as the Deployment Method, and select *Enable Automatic Deployment*.
+4. In the Heroku **Settings** tab, click on the *Reveal Config Vars* button to configure environmental variables as in the local deployment above.
+5. In the **Resources** tab, go to the Add-ons section and add the Heroku Postgres add-on. Choose the *Hobby* level when prompted. This will give you a remote database to use for your project. The database URI will be located in the Config Vars in the **Settings** tab.
+6. The app will now be deployed and built by Heroku and will be ready to run.
+7. Alter your project's ```settings.py``` file to connect to the remote database using the ```dj_database_url``` Python package.
+8. Follow the steps in the Local Deployments section above to migrate your schema to the remote database.
+
+##### back to [top](#table-of-contents)
+
+---
 
 
 ## Credits
