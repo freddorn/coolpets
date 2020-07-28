@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700');
 
 /*--Font and Text styles--*/
@@ -88,6 +95,7 @@ footer h5 {
 .listing-card h5 {
   color: #373737;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
+  -o-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
 }
 
@@ -246,6 +254,7 @@ it partially over the shopping cart icon */
 /* Delete icon in cart page */
 .fa-times-circle {
   -webkit-transition: 0.2s all ease-in-out 0.1s;
+  -o-transition: 0.2s all ease-in-out 0.1s;
   transition: 0.2s all ease-in-out 0.1s;
 }
 
@@ -257,6 +266,7 @@ it partially over the shopping cart icon */
   font-size: 1.2rem;
   margin-top: 0.5rem;
   -webkit-transition: 0.2s all ease-in-out 0.1s;
+  -o-transition: 0.2s all ease-in-out 0.1s;
   transition: 0.2s all ease-in-out 0.1s;
 }
 
@@ -290,6 +300,7 @@ it partially over the shopping cart icon */
 a {
   color: #63c4fc;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
+  -o-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
 }
 
@@ -324,6 +335,7 @@ footer ul {
 footer a {
   color: #f8f9fa;
   -webkit-transition: 0.3s all ease-in-out 0.2s;
+  -o-transition: 0.3s all ease-in-out 0.2s;
   transition: 0.3s all ease-in-out 0.2s;
 }
 
@@ -429,6 +441,7 @@ footer a:hover {
   background-size: contain;
   border-radius: 8px;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
+  -o-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
   background-position: center 35%;
 }
@@ -485,6 +498,7 @@ footer a:hover {
   color: #373737;
   font-size: 0.8rem;
   -webkit-transition: 0.2s all ease-in-out 0.3s;
+  -o-transition: 0.2s all ease-in-out 0.3s;
   transition: 0.2s all ease-in-out 0.3s;
 }
 
@@ -515,6 +529,7 @@ footer a:hover {
 .listing-card {
   max-width: 300px;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
+  -o-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
 }
 
@@ -647,6 +662,7 @@ footer a:hover {
 .link {
   color: #47b7f8;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
+  -o-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
 }
 
@@ -705,6 +721,7 @@ a.blue-link {
   text-align: left;
   color: #373737;
   -webkit-transition: 0.2s all ease-in-out 0.2s;
+  -o-transition: 0.2s all ease-in-out 0.2s;
   transition: 0.2s all ease-in-out 0.2s;
 }
 
