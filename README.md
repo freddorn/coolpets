@@ -346,12 +346,69 @@ Quantity | quantity | | PositiveSmallIntegerField
 ## Testing
 
 ### Automated Testing
+- [Travis](https://travis-ci.org/) was used throughout the unit testing of this project to provide continuous integration with the deployed site.
+  - In the heroku deployment settings, it will only allow deployment, when Travis CI has passed the latest push to the master branch on GitHub.
+
+- Unittests in combination with the coverage.py testing tool.
+
 
 ### Manual Testing
+- All python pages are mostly PEP8 compliant, with four instances of the `line too long` error.
+  - Disregarded the message as I could not find an alernative format for each instance.
+
+- The W3C Jigsaw validator does not recognize root variables, and therefore passes **Parse Errors**.
+
+- When validating Javascript, the following errors appeared as the validator could not recognize JQuery or Stripe:
+  - '$' is not defined.
+  - "STRIPE" is not defined.
+
+- All images are displaying properly.
+
+- Links and URLs are working correctly.
+
+- The Responsiveness of the site is good at all screen sizes.
+
+- All pages are rendering as expected.
+
+- The back-end functionality is working as expected.
+
+- Stripe payments is operating properly.
 
 ### Validators
+* [AutoPrefixer](https://autoprefixer.github.io/)
+    - To make sure the css code is valid for all browsers.
+
+* [W3C CSS validation](https://jigsaw.w3.org/css-validator/)
+    - To check the the validity of the CSS code. 
+    
+* [W3C Markup Validation](https://validator.w3.org/)
+    - To check the the validity of the HTML code. 
+
+* [Javascript Syntax Validator](https://esprima.org/demo/validate.html)
+    - Checks for javascript mistakes and errors.
+    
+* [JS Hint](https://jshint.com/)
+    - Validates javascript and checks for errors.
 
 ### Compatibility
+
+To ensure a broad range of users can successfully use the site, I tested different browsers in both desktop and mobile configuration, for appearance and responsiveness.
+
+- **Chrome**
+  - Tested Good 
+- **Edge** 
+  - Tested Good
+- **Firefox**
+  - Tested Good
+- **Safari** 
+  - Tested Fair
+- **Opera** 
+  - Tested Good
+
+#### Bugs Fixed
+
+I originally had each python test in the test directory of each app. It was causing Travis CI to have a Failed Build error. The tests were moved to a 
+Tests directory, at the root level, to prevent this problem.
 
 
 
