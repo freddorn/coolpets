@@ -251,7 +251,6 @@ def checkout_confirm_view(request, *args, **kwargs):
     context = {
         "active_pg": "checkout_confirm",
         "order": order,
-        "user": request.user,
         "footer": False,
         "navbar": False,
     }
