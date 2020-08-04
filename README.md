@@ -500,4 +500,4 @@ To implement this project on Heroku, the following must be completed:
 - W3SCHOOLS website for easy explanation of the code.
 - Stack Overflow, a good source of knowledge.
 - My database structure was inspired by [Anna Greaves](https://github.com/AJGreaves) from her milestone project The House of Mouse.
-  
+- My three dogs Bo, Chloie and Lena, who gave me the idea for this project. 
