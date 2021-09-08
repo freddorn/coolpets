@@ -26,7 +26,7 @@ jasmine-core==3.5.0
 jmespath==0.9.4
 ordereddict==1.1
 packaging==20.4
-Pillow==8.2.0
+Pillow==8.3.2
 portend==2.6
 psycopg2==2.8.4
 py==1.10.0
