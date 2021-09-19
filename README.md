@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/freddorn/coolpets.svg?branch=master)](https://travis-ci.com/freddorn/coolpets)
 
 #   [Coolpets](https://coolpets.herokuapp.com/)
 
