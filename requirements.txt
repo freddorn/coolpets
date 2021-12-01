@@ -38,6 +38,7 @@ pylint-plugin-utils==0.6
 pyparsing==2.4.7
 pytest==5.4.3
 pytest-cov==2.10.0
+python-2.7.18
 pytz==2019.3
 requests==2.22.0
 s3transfer==0.3.3
