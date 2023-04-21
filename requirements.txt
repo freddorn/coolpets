@@ -42,7 +42,7 @@ pytz==2019.3
 requests==2.22.0
 s3transfer==0.3.3
 selenium==3.141.0
-sqlparse==0.3.0
+sqlparse==0.4.4
 stripe==2.48.0
 tempora==3.0.0
 urllib3==1.26.5
